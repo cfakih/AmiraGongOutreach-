@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amira Learning: Platform Comparison Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-dark: #120044;
+            --primary-darker: #030268;
+            --primary: #3028a1;
+            --primary-light: #5951ff;
+            --primary-lighter: #7a7fff;
+            --primary-lightest: #b3b0ff;
+            --primary-pale: #cdcbff;
+            --primary-faint: #f0f0ff;
+            --neutral-warm: #dcd7bf;
+            --neutral-light: #edeadd;
+            --neutral-lighter: #f7f5f2;
+            --text-dark: #1f1f1f;
+            --text-medium: #575757;
+            --text-light: #9d9d9d;
+            --gray-light: #d7d7d7;
+            --gray-lighter: #e6e6e6;
+            --gray-lightest: #f2f2f2;
+            --white-soft: #fbfbfb;
+            --white: #ffffff;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation Sidebar */
+        .sidebar-nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 280px;
+            background: var(--white);
+            border-right: 1px solid var(--gray-lighter);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .sidebar-nav.collapsed {
+            width: 60px;
+        }
+        
+        .nav-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--gray-lighter);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+        }
+        
+        .nav-header h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sidebar-nav.collapsed .nav-header h3 {
+            opacity: 0;
+        }
+        
+        .nav-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background 0.3s ease;
+            min-width: 35px;
+        }
+        
+        .nav-toggle:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .nav-links {
+            list-style: none;
+            padding: 10px 0;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .nav-link:hover {
+            background: var(--primary-faint);
+            color: var(--primary);
+            padding-left: 25px;
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+            background: var(--primary-faint);
+            border-left: 3px solid var(--primary);
+            font-weight: 600;
+        }
+        
+        .sidebar-nav.collapsed .nav-link {
+            padding: 12px 10px;
+            text-align: center;
+        }
+        
+        .sidebar-nav.collapsed .nav-link span {
+            display: none;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .main-content.expanded {
+            margin-left: 60px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        
+        .header p {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section h2 {
+            color: var(--primary-dark);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-light);
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        /* Initiative Cards */
+        .initiative-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .initiative-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, transparent, var(--primary-faint));
+            border-radius: 0 0 0 100px;
+        }
+        
+        .initiative-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+        }
+        
+        .initiative-card h3 {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .initiative-quote {
+            background: var(--primary-faint);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            color: var(--text-medium);
+            font-size: 15px;
+            position: relative;
+        }
+        
+        .initiative-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 48px;
+            color: var(--primary-light);
+            opacity: 0.3;
+        }
+        
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .capability-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+        }
+        
+        .capability-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+        
+        .capability-box.outreach {
+            border-top-color: var(--primary);
+        }
+        
+        .capability-box.gong {
+            border-top-color: var(--warning);
+        }
+        
+        .capability-box h5 {
+            color: var(--text-dark);
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .capability-box.outreach h5::before {
+            content: "◆";
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 14px;
+        }
+        
+        .capability-box.gong h5::before {
+            content: "◉";
+            margin-right: 10px;
+            color: var(--warning);
+            font-size: 14px;
+        }
+        
+        .capability-list {
+            list-style: none;
+        }
+        
+        .capability-list li {
+            padding: 10px 0;
+            color: var(--text-medium);
+            font-size: 14px;
+            line-height: 1.7;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .capability-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .capability-list li.limitation {
+            color: var(--text-light);
+        }
+        
+        .capability-list li.limitation::before {
+            content: "⚠";
+            color: var(--warning);
+        }
+        
+        /* Winner Badge */
+        .winner-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .winner-badge.outreach {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        }
+        
+        .winner-badge.gong {
+            background: linear-gradient(135deg, var(--warning), #ffa726);
+        }
+        
+        .winner-badge.context {
+            background: linear-gradient(135deg, var(--text-medium), var(--text-light));
+        }
+        
+        /* Stakeholder Cards */
+        .stakeholder-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .stakeholder-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stakeholder-card h4 {
+            color: var(--primary-dark);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .stakeholder-card .role {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+        }
+        
+        .comparison-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .comparison-table td {
+            padding: 14px 15px;
+            border-bottom: 1px solid var(--gray-lighter);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .comparison-table tbody tr {
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background: var(--primary-faint);
+        }
+        
+        /* Team Cards */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .team-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+        
+        .team-card h4 {
+            color: var(--primary-dark);
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .team-card .current-state {
+            color: var(--text-light);
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray-lighter);
+        }
+        
+        .team-card .comparison-content {
+            margin: 15px 0;
+        }
+        
+        .team-card .comparison-content p {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .team-card .verdict {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid var(--gray-lighter);
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .team-card .verdict.outreach-wins {
+            color: var(--primary);
+        }
+        
+        .team-card .verdict.gong-wins {
+            color: var(--warning);
+        }
+        
+        .team-card .verdict.context-dependent {
+            color: var(--text-medium);
+        }
+        
+        /* Solution Mapping */
+        .solution-card {
+            background: linear-gradient(135deg, var(--white), var(--primary-faint));
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
+        .solution-card .solution-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--white);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .solution-card h4 {
+            color: var(--primary-dark);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-right: 50px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .sidebar-nav {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0 !important;
+            }
+            
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .header {
+                padding: 50px 0;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-header">
+            <h3>Navigation</h3>
+            <button class="nav-toggle" id="navToggle">☰</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#executive-summary" class="nav-link"><i>📊</i><span>Executive Summary</span></a></li>
+            <li><a href="#initiatives" class="nav-link"><i>🎯</i><span>Core Initiatives</span></a></li>
+            <li><a href="#stakeholders" class="nav-link"><i>👤</i><span>Stakeholder Impact</span></a></li>
+            <li><a href="#teams" class="nav-link"><i>👥</i><span>Team Analysis</span></a></li>
+            <li><a href="#processes" class="nav-link"><i>⚙️</i><span>Key Processes</span></a></li>
+            <li><a href="#integrations" class="nav-link"><i>🔗</i><span>Tool Integrations</span></a></li>
+            <li><a href="#solution-mapping" class="nav-link"><i>🗺️</i><span>Solution Mapping</span></a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <div class="header">
+            <div class="container header-content">
+                <h1>Platform Comparison Analysis</h1>
+                <p>Objective Assessment of Outreach vs Gong Engage for Amira Learning's Revenue Transformation</p>
+            </div>
+        </div>
+        
+        <!-- Executive Summary -->
+        <section id="executive-summary" class="section">
+            <div class="container">
+                <h2>Executive Summary</h2>
+                <div class="initiative-card">
+                    <h3>Context & Evaluation Overview</h3>
+                    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
+                        Amira Learning is evaluating revenue platforms following the iStation merger, with 50-60 fragmented tool licenses yielding only 4-8 active users. With Rich's mandate for 30% AI automation across every role and the need to consolidate tools while standardizing pilot management, this decision will shape revenue operations for the next 3-5 years.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; margin: 20px 0;">
+                        Both Outreach and Gong Engage offer sales engagement, conversation intelligence, and forecasting capabilities. The differentiation lies in architectural approach, platform maturity, and alignment with Amira's specific K-12 education market requirements.
+                    </p>
+                    <div style="background: var(--gray-lightest); padding: 20px; border-radius: 8px; margin-top: 25px;">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Key Decision Factors</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0;">• <strong>Platform Architecture:</strong> Single unified system vs conversation-first with added engagement</li>
+                            <li style="padding: 8px 0;">• <strong>AI Capabilities:</strong> Native throughout platform vs analytics-focused with flow automation</li>
+                            <li style="padding: 8px 0;">• <strong>Integration Approach:</strong> Enterprise Salesforce sync vs standard CRM connections</li>
+                            <li style="padding: 8px 0;">• <strong>Tool Consolidation:</strong> Complete revenue lifecycle vs sales and conversation focus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Core Business Initiatives -->
+        <section id="initiatives" class="section">
+            <div class="container">
+                <h2>Core Business Initiatives Analysis</h2>
+                
+                <!-- AI Transformation -->
+                <div class="initiative-card">
+                    <h3>1. AI Transformation Mandate (30% Automation Target)</h3>
+                    <div class="initiative-quote">
+                        "30% of every job should leverage AI with interest in agentic measures" - Rich Watson, CRO
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Approach</h5>
+                            <ul class="capability-list">
+                                <li>AI Revenue Agents manage tier-3 accounts autonomously without human intervention</li>
+                                <li>Gemini Research Agent monitors .edu/.gov sites for district changes and grants</li>
+                                <li>Smart Deal Assist analyzes closed-won patterns to score current opportunities</li>
+                                <li>Kaia provides real-time coaching and content cards during calls</li>
+                                <li>AI-powered sequence optimization and message generation throughout platform</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Engage Approach</h5>
+                            <ul class="capability-list">
+                                <li>AI-powered conversation intelligence with pattern recognition and insights</li>
+                                <li>Automated email generation within Engage flows</li>
+                                <li>Deal intelligence for risk detection and coaching opportunities</li>
+                                <li>Call analytics with topic detection and sentiment analysis</li>
+                                <li class="limitation">No autonomous agent capabilities - requires human oversight</li>
+                                <li class="limitation">Limited external research or monitoring capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="winner-badge outreach">Assessment: Outreach better aligns with autonomous "agentic measures" requirement</div>
+                </div>
+                
+                <!-- Tool Consolidation -->
+                <div class="initiative-card">
+                    <h3>2. Tool Consolidation Initiative</h3>
+                    <div class="initiative-quote">
+                        "We have 50-60 licenses... only 4 being used well. We need to merge all this together" - Nathan Johnson
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Platform Coverage</h5>
+                            <ul class="capability-list">
+                                <li>Complete revenue lifecycle: Prospecting → Deal Management → Success Plans → CS</li>
+                                <li>Native conversation intelligence replacing separate Chorus instances</li>
+                                <li>Built-in forecasting across new business and renewals</li>
+                                <li>Single admin console for all governance and reporting</li>
+                                <li>Unified activity system with automatic capture</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Platform Coverage</h5>
+                            <ul class="capability-list">
+                                <li>Core conversation intelligence with Engage add-on for sales engagement</li>
+                                <li>Deal execution and forecasting modules available</li>
+                                <li>Strong analytics and coaching capabilities</li>
+                                <li class="limitation">Requires purchasing Core Gong + Engage separately</li>
+                                <li class="limitation">Limited post-sale capabilities beyond conversation tracking</li>
+                                <li class="limitation">Engage is newer addition, still maturing vs core CI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="winner-badge context">Assessment: Context Dependent - Outreach for complete consolidation, Gong if CI is primary focus</div>
+                </div>
+                
+                <!-- Pilot Standardization -->
+                <div class="initiative-card">
+                    <h3>3. Pilot Standardization & Management</h3>
+                    <div class="initiative-quote">
+                        "We actually just finalized our success criteria for pilots... rolled that out company wide today" - January Hodge
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Success Plans</h5>
+                            <ul class="capability-list">
+                                <li>Templatized pilot phases with success criteria tracking</li>
+                                <li>Customer collaboration portal for accountability</li>
+                                <li>Automated milestone alerts and timeline management</li>
+                                <li>Resource library and documentation centralization</li>
+                                <li>Internal notes separate from customer-facing content</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Pilot Management</h5>
+                            <ul class="capability-list">
+                                <li>Deal execution views for opportunity tracking</li>
+                                <li>Conversation insights around pilot discussions</li>
+                                <li>Risk detection based on call analytics</li>
+                                <li class="limitation">No native Success Plans or Mutual Action Plans</li>
+                                <li class="limitation">Pilots tracked manually in CRM or external docs</li>
+                                <li class="limitation">No collaborative customer workspace</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="winner-badge outreach">Assessment: Outreach provides purpose-built capability Gong lacks</div>
+                </div>
+                
+                <!-- Data Integrity -->
+                <div class="initiative-card">
+                    <h3>4. Data Integrity & Activity Capture</h3>
+                    <div class="initiative-quote">
+                        "We have a whole year now of basically no history at all of activity" - Ann Kurtz
+                    </div>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Architecture</h5>
+                            <ul class="capability-list">
+                                <li>Single integration user eliminates individual connection failures</li>
+                                <li>Automatic activity capture without manual logging</li>
+                                <li>Real-time API monitoring with automatic throttling</li>
+                                <li>Error logging with specific remediation steps</li>
+                                <li>Conflict resolution layer for data integrity</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Architecture</h5>
+                            <ul class="capability-list">
+                                <li>Standard Salesforce sync with activity capture</li>
+                                <li>Conversation data automatically logged</li>
+                                <li>Engage activities sync to CRM</li>
+                                <li class="limitation">Limited custom object support</li>
+                                <li class="limitation">Standard API approach without advanced monitoring</li>
+                                <li class="limitation">Less granular sync configuration options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="winner-badge outreach">Assessment: Outreach enterprise architecture prevents historical issues</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stakeholder Impact -->
+        <section id="stakeholders" class="section">
+            <div class="container">
+                <h2>Stakeholder Impact Analysis</h2>
+                
+                <!-- Rich Watson -->
+                <div class="stakeholder-card">
+                    <h4>Rich Watson - CRO</h4>
+                    <p class="role">Executive Sponsor - AI Transformation & Tool Consolidation Mandate</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses Rich's Needs</h5>
+                            <ul class="capability-list">
+                                <li>AI agents achieve and exceed 30% automation target</li>
+                                <li>Single platform consolidates 4+ tools into one</li>
+                                <li>Complete revenue visibility from BDR to renewal</li>
+                                <li>Predictive forecasting with 95% accuracy potential</li>
+                                <li>Success Plans align with pilot standardization initiative</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses Rich's Needs</h5>
+                            <ul class="capability-list">
+                                <li>AI-powered insights improve decision making</li>
+                                <li>Conversation intelligence drives coaching at scale</li>
+                                <li>Deal intelligence identifies risks proactively</li>
+                                <li>Forecasting based on interaction data</li>
+                                <li class="limitation">AI assists rather than automates workflows</li>
+                                <li class="limitation">Partial consolidation - still need other tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nathan Johnson -->
+                <div class="stakeholder-card">
+                    <h4>Nathan Johnson - BDR Manager</h4>
+                    <p class="role">Champion - Managing 60 licenses with only 4 active users</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses Nathan's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Deep sequence analytics show why 4 succeed while 56 don't</li>
+                                <li>Built-in speed-to-lead automation</li>
+                                <li>AI coaching at scale without manual review</li>
+                                <li>Unified platform his team can actually adopt</li>
+                                <li>Proven success from Instructure experience</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses Nathan's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Engage provides flows for BDR sequences</li>
+                                <li>Call coaching through conversation intelligence</li>
+                                <li>Basic flow analytics and reporting</li>
+                                <li class="limitation">Newer platform with limited engagement analytics</li>
+                                <li class="limitation">Less mature sequence optimization capabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ann Kurtz -->
+                <div class="stakeholder-card">
+                    <h4>Ann Kurtz - Director of RevOps</h4>
+                    <p class="role">Technical Decision Maker - Concerned about integration reliability</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses Ann's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Single integration user architecture prevents failures</li>
+                                <li>Real-time API monitoring and throttling</li>
+                                <li>Full custom object support for complex data model</li>
+                                <li>Unmanaged Salesforce package for flexibility</li>
+                                <li>Error logging with remediation instructions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses Ann's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Standard Salesforce integration</li>
+                                <li>Reliable conversation data sync</li>
+                                <li>Simpler setup with fewer configuration options</li>
+                                <li class="limitation">Limited custom object support</li>
+                                <li class="limitation">Less granular sync control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- January Hodge -->
+                <div class="stakeholder-card">
+                    <h4>January Hodge - VP Sales (Hunters)</h4>
+                    <p class="role">Field Sales Leader - Needs mobile tools and pilot management</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses January's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Deal grid "way less clunky than Salesforce"</li>
+                                <li>Success Plans for standardized pilot management</li>
+                                <li>Mobile app with recording coming H1 2025</li>
+                                <li>Supports any task type including in-person meetings</li>
+                                <li>AI health scores flag inactive deals</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses January's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Deal execution views for opportunity tracking</li>
+                                <li>Mobile app for call recording</li>
+                                <li>Risk alerts based on conversation patterns</li>
+                                <li class="limitation">No Success Plans capability</li>
+                                <li class="limitation">Less focus on field sales workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rebecca -->
+                <div class="stakeholder-card">
+                    <h4>Rebecca - VP Renewals & Partnerships</h4>
+                    <p class="role">Renewal Leader - Needs proactive risk identification</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses Rebecca's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Automated renewal sequences by date and usage</li>
+                                <li>AI identifies expansion opportunities</li>
+                                <li>Relationship mapping for multi-threading</li>
+                                <li>Proactive risk detection from activity patterns</li>
+                                <li>Integration with usage data for health scoring</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses Rebecca's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Conversation insights identify renewal risks</li>
+                                <li>Deal warnings based on engagement</li>
+                                <li>Stakeholder tracking in conversations</li>
+                                <li class="limitation">Manual renewal process setup</li>
+                                <li class="limitation">Limited post-sale automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dirk Hamilton -->
+                <div class="stakeholder-card">
+                    <h4>Dirk Hamilton - Head of Customer Success</h4>
+                    <p class="role">CS Leader - Needs context from sales and external intelligence</p>
+                    
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>How Outreach Addresses Dirk's Needs</h5>
+                            <ul class="capability-list">
+                                <li>External monitoring of district changes</li>
+                                <li>Complete pre-sales context aggregated</li>
+                                <li>AI coaching without manual review time</li>
+                                <li>Pushes insights to ChurnZero via Salesforce</li>
+                                <li>Unified conversation intelligence across teams</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>How Gong Addresses Dirk's Needs</h5>
+                            <ul class="capability-list">
+                                <li>Native ChurnZero integration for summaries</li>
+                                <li>Strong conversation intelligence heritage</li>
+                                <li>Call coaching insights readily available</li>
+                                <li>Less change management with current Chorus use</li>
+                                <li class="limitation">No external intelligence monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Analysis -->
+        <section id="teams" class="section">
+            <div class="container">
+                <h2>Team-by-Team Analysis</h2>
+                
+                <div class="team-grid">
+                    <!-- BDR Team -->
+                    <div class="team-card">
+                        <h4>BDR Team (Nathan - 60 Licenses)</h4>
+                        <p class="current-state">Current: 4 of 60 SalesLoft licenses used, manual speed-to-lead, limited coaching visibility</p>
+                        <div class="comparison-content">
+                            <p><strong>Outreach:</strong> Mature sequence platform with deep analytics, AI-powered optimization, built-in speed-to-lead, automated coaching insights. Platform Nathan knows and trusts from Instructure.</p>
+                            <p><strong>Gong:</strong> Engage provides flows with auto-email and LinkedIn steps, conversation coaching, basic flow metrics. Newer platform still building engagement depth.</p>
+                        </div>
+                        <p class="verdict outreach-wins">Platform Fit: Outreach - Proven BDR platform with adoption track record</p>
+                    </div>
+                    
+                    <!-- Hunters Team -->
+                    <div class="team-card">
+                        <h4>Hunters/Field Sales (January)</h4>
+                        <p class="current-state">Current: "5 clicks in Salesforce", primarily in-person sales, Google Docs for pilots</p>
+                        <div class="comparison-content">
+                            <p><strong>Outreach:</strong> Deal grid interface, Success Plans for pilots, mobile app with recording coming, supports in-person meeting workflows, AI health scoring.</p>
+                            <p><strong>Gong:</strong> Deal execution views, conversation insights, risk detection. No Success Plans capability, less field sales focus.</p>
+                        </div>
+                        <p class="verdict outreach-wins">Platform Fit: Outreach - Built for complex field sales with pilots</p>
+                    </div>
+                    
+                    <!-- Renewals Team -->
+                    <div class="team-card">
+                        <h4>Renewals Team (Rebecca)</h4>
+                        <p class="current-state">Current: Manual tracking, no automated alerts, reactive risk identification</p>
+                        <div class="comparison-content">
+                            <p><strong>Outreach:</strong> Automated renewal sequences, AI expansion identification, relationship mapping, proactive risk alerts, usage integration.</p>
+                            <p><strong>Gong:</strong> Conversation-based risk detection, deal warnings, stakeholder tracking. Requires manual renewal setup.</p>
+                        </div>
+                        <p class="verdict outreach-wins">Platform Fit: Outreach - Purpose-built renewal automation</p>
+                    </div>
+                    
+                    <!-- CS Team -->
+                    <div class="team-card">
+                        <h4>Customer Success (Dirk)</h4>
+                        <p class="current-state">Current: Separate Chorus, integrated with ChurnZero, limited coaching time</p>
+                        <div class="comparison-content">
+                            <p><strong>Outreach:</strong> External district monitoring, full sales context, AI coaching, pushes to ChurnZero via Salesforce.</p>
+                            <p><strong>Gong:</strong> Native ChurnZero integration, strong CI capabilities, direct summary sync, minimal workflow change.</p>
+                        </div>
+                        <p class="verdict context-dependent">Platform Fit: Context Dependent - Gong for pure CS, Outreach for unified operations</p>
+                    </div>
+                    
+                    <!-- RevOps Team -->
+                    <div class="team-card">
+                        <h4>Revenue Operations (Ann)</h4>
+                        <p class="current-state">Current: "Whole year of no history", broken integrations, heavy admin burden</p>
+                        <div class="comparison-content">
+                            <p><strong>Outreach:</strong> Enterprise architecture with single integration user, API monitoring, custom object support, error prevention.</p>
+                            <p><strong>Gong:</strong> Simpler setup, standard integration, less configuration complexity. Limited custom object support.</p>
+                        </div>
+                        <p class="verdict outreach-wins">Platform Fit: Outreach - Enterprise architecture for complex requirements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Key Processes -->
+        <section id="processes" class="section">
+            <div class="container">
+                <h2>Key Process Comparison</h2>
+                
+                <div class="initiative-card">
+                    <h3>Speed to Lead Process</h3>
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Approach</h5>
+                            <ul class="capability-list">
+                                <li>Native speed-to-lead with automatic routing</li>
+                                <li>Instant sequence enrollment based on rules</li>
+                                <li>AI prioritization of hottest leads</li>
+                                <li>Automatic task creation and assignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Approach</h5>
+                            <ul class="capability-list">
+                                <li>Flow automation for lead response</li>
+                                <li>Basic routing capabilities</li>
+                                <li>Manual configuration required</li>
+                                <li class="limitation">Less sophisticated routing logic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <h3>Pilot Management Process</h3>
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Approach</h5>
+                            <ul class="capability-list">
+                                <li>Success Plans with phase management</li>
+                                <li>Customer collaboration portal</li>
+                                <li>Templatized success criteria</li>
+                                <li>Automated milestone tracking</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Approach</h5>
+                            <ul class="capability-list">
+                                <li>Track pilot discussions in calls</li>
+                                <li>Deal execution views for status</li>
+                                <li class="limitation">No structured pilot framework</li>
+                                <li class="limitation">External tools still required</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="initiative-card">
+                    <h3>Forecasting Process</h3>
+                    <div class="comparison-grid">
+                        <div class="capability-box outreach">
+                            <h5>Outreach Approach</h5>
+                            <ul class="capability-list">
+                                <li>AI projections with 95% accuracy potential</li>
+                                <li>Unified new business and renewal forecasting</li>
+                                <li>Pipeline coverage analysis</li>
+                                <li>Deal pacing insights</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capability-box gong">
+                            <h5>Gong Approach</h5>
+                            <ul class="capability-list">
+                                <li>Interaction-based forecasting</li>
+                                <li>Risk identification from conversations</li>
+                                <li>Deal inspection capabilities</li>
+                                <li>Pipeline analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tool Integrations -->
+        <section id="integrations" class="section">
+            <div class="container">
+                <h2>Current Tool Integration Analysis</h2>
+                
+                <h3 style="margin: 30px 0;">Salesforce Integration</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Outreach</th>
+                            <th>Gong</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Integration Architecture</strong></td>
+                            <td>Single integration user for all connections</td>
+                            <td>Standard user-based connections</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Objects</strong></td>
+                            <td>Full support with governance controls</td>
+                            <td>Limited custom object support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sync Reliability</strong></td>
+                            <td>Real-time with conflict resolution</td>
+                            <td>Standard sync intervals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Activity Capture</strong></td>
+                            <td>Automatic without manual logging</td>
+                            <td>Automatic for supported activities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reporting Package</strong></td>
+                            <td>Unmanaged (fully customizable)</td>
+                            <td>Standard reporting options</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="margin: 30px 0;">ChurnZero Integration</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Outreach</th>
+                            <th>Gong</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Integration Type</strong></td>
+                            <td>Via Salesforce fields (indirect)</td>
+                            <td>Native direct integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Flow</strong></td>
+                            <td>Enriched fields pushed to Salesforce, then to ChurnZero</td>
+                            <td>Direct sync of summaries and links</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Workflow Impact</strong></td>
+                            <td>Insights accessible via embedded links</td>
+                            <td>Summaries appear directly in timelines</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setup Complexity</strong></td>
+                            <td>Requires field mapping configuration</td>
+                            <td>Simple native connection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assessment</strong></td>
+                            <td>Viable but requires more setup</td>
+                            <td><strong>Advantage: Native integration</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="margin: 30px 0;">Highspot Integration</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Outreach</th>
+                            <th>Gong</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Content Access</strong></td>
+                            <td>Live content cards during calls</td>
+                            <td>Basic repository connection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Battle Cards</strong></td>
+                            <td>Auto-trigger on competitor mentions</td>
+                            <td>Manual access required</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sales Play Tracking</strong></td>
+                            <td>Usage analytics and adoption metrics</td>
+                            <td>Limited tracking capabilities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Assessment</strong></td>
+                            <td><strong>Advantage: Active integration</strong></td>
+                            <td>Passive repository only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Solution Mapping -->
+        <section id="solution-mapping" class="section">
+            <div class="container">
+                <h2>Critical Solution Mapping: Top 10 Pain Points</h2>
+                
+                <div class="solution-card">
+                    <div class="solution-number">1</div>
+                    <h4>The Lost Year of Data</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> "A whole year now of basically no history at all of activity" - cannot answer CEO's basic questions about meetings.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> Single integration user architecture that never logs out, automatic activity capture without manual clicking, real-time sync with conflict resolution. Makes data loss architecturally impossible.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Transform from data desert to predictive intelligence with complete activity history preserved.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">2</div>
+                    <h4>The 30% AI Automation Mandate</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> Rich mandated "30% of every job should leverage AI" with interest in "agentic measures" - autonomous agents, not just assistance.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> AI Revenue Agents manage 3,000+ tier-3 accounts completely autonomously. Gemini Research Agent monitors districts. Smart Deal Assist scores opportunities. Exceeds 30% by automating entire workflows.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Angela's commercial team is highest-performing specifically because AI handles all low-value work.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">3</div>
+                    <h4>Pilot Standardization Crisis</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> ~50% of deals require pilots, currently tracked in scattered Google Docs with no consistency or visibility.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> Success Plans provide templatized phases, customer collaboration portals, automated milestone tracking, and resource libraries. Rolled out same day as company initiative.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Nathan's assessment: "That would honestly be music to Rich's ears" - systematic pilot execution.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">4</div>
+                    <h4>Five-Click Productivity Drain</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> January: "Literally 5 clicks in Salesforce" to check basic deal information, field reps waste 30-45 minutes daily.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> Deal grid shows everything on one screen with in-line editing. January validated as "way less clunky than Salesforce." Mobile app enables field updates.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> 30-45 minutes saved daily per rep compounds to millions in annual productivity.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">5</div>
+                    <h4>Invisible Risk Detection</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> Rebecca: "No response...bringing in stakeholders we didn't have before" - risks identified too late.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> AI health scores proactively surface response rates, stakeholder changes, rep activity patterns, and stage duration anomalies before deals go dark.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Predictive risk management allows intervention while deals are still salvageable.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">6</div>
+                    <h4>Coaching Time Bankruptcy</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> Dirk: "We've just been so darn busy. We have not as leaders had an opportunity to get in there."
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> AI-powered coach cards automatically score calls, surface coaching moments, track improvement without managers listening to every call.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Transform from time-bankrupt to insight-rich coaching that scales across entire team.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">7</div>
+                    <h4>District Intelligence Vacuum</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> "Lot of turnover and churn within school districts personnel" - constant uncertainty about decision makers.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> AI agents continuously monitor .edu/.gov sites for superintendent changes, grant awards, test scores. Automatically updates records and triggers alerts.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Prevents being blindsided by changes competitors might miss.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">8</div>
+                    <h4>Tool Adoption Failure</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> "50-60 licenses with only 4 being used well" - massive waste and limited value realization.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> Unified platform where all teams operate from same system. Nathan's proven success at Instructure. Single source of truth from BDR to CS.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Transform from 7% adoption to company-wide usage with proven playbooks.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">9</div>
+                    <h4>Renewal Blindness</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> Rebecca tracks renewals manually with no automated alerts or expansion identification.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> Automated renewal sequences triggered by dates/usage, AI identifies expansion opportunities, relationship mapping for multi-threading.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Transform reactive fire-fighting to proactive relationship nurturing.
+                    </p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-number">10</div>
+                    <h4>Forecast Confidence Crisis</h4>
+                    <p style="margin: 15px 0;">
+                        <strong>Pain Point:</strong> "Really rudimentary" forecasting requiring triangulation between multiple sources, no segmentation capability.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Outreach Solution:</strong> AI-powered forecasting with 95% accuracy potential. Angela manages $7M pipeline with precise projections. Identifies rep commitment patterns.
+                    </p>
+                    <p style="margin: 15px 0;">
+                        <strong>Impact:</strong> Transform from guesswork to data-driven predictions Rich can trust for board reporting.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final Assessment -->
+        <section class="section">
+            <div class="container">
+                <h2>Platform Assessment Summary</h2>
+                
+                <div class="initiative-card">
+                    <h3>Outreach Strengths for Amira</h3>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                        <li style="padding: 10px 0;">✓ <strong>Complete Platform:</strong> Full revenue lifecycle from BDR to renewal in one system</li>
+                        <li style="padding: 10px 0;">✓ <strong>Success Plans:</strong> Purpose-built for pilot management - critical differentiator</li>
+                        <li style="padding: 10px 0;">✓ <strong>Enterprise Architecture:</strong> Prevents data disasters with proven reliability</li>
+                        <li style="padding: 10px 0;">✓ <strong>AI Agents:</strong> Autonomous capabilities exceed 30% mandate</li>
+                        <li style="padding: 10px 0;">✓ <strong>Engagement Analytics:</strong> Deep insights into what drives success</li>
+                        <li style="padding: 10px 0;">✓ <strong>Field Sales Support:</strong> Mobile and in-person meeting workflows</li>
+                    </ul>
+                </div>
+                
+                <div class="initiative-card">
+                    <h3>Gong Engage Strengths for Amira</h3>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                        <li style="padding: 10px 0;">✓ <strong>Conversation Intelligence:</strong> Market-leading CI capabilities</li>
+                        <li style="padding: 10px 0;">✓ <strong>ChurnZero Integration:</strong> Native connection preserves CS workflows</li>
+                        <li style="padding: 10px 0;">✓ <strong>Simpler Implementation:</strong> Less complex setup and configuration</li>
+                        <li style="padding: 10px 0;">✓ <strong>Deal Analytics:</strong> Strong pipeline and forecast insights</li>
+                        <li style="padding: 10px 0;">✓ <strong
