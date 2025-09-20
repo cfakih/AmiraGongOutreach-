@@ -659,6 +659,52 @@
             margin-bottom: 15px;
             padding-right: 50px;
         }
+
+        /* Constraints specific styling */
+        .constraints-section {
+            background: linear-gradient(135deg, #ff9500, #ffa726);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+        }
+
+        .constraints-section h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .constraint-category {
+            margin-bottom: 25px;
+        }
+
+        .constraint-category h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .constraint-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .constraint-item::before {
+            content: "⚠";
+            margin-right: 8px;
+            color: #ffd54f;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .constraint-item strong {
+            font-weight: 600;
+        }
         
         /* Mobile Responsive */
         @media (max-width: 1024px) {
@@ -723,6 +769,7 @@
             <li><a href="#teams" class="nav-link"><i>👥</i><span>Team Analysis</span></a></li>
             <li><a href="#integrations" class="nav-link"><i>🔗</i><span>Tool Integrations</span></a></li>
             <li><a href="#solution-mapping" class="nav-link"><i>🗺️</i><span>Solution Mapping</span></a></li>
+            <li><a href="#gong-constraints" class="nav-link"><i>⚠️</i><span>Gong Constraints</span></a></li>
             <li><a href="#assessment" class="nav-link"><i>✅</i><span>Platform Assessment</span></a></li>
         </ul>
     </nav>
@@ -879,6 +926,12 @@
                         "30% of every job should leverage AI with interest in agentic measures" - Rich Watson, CRO
                     </div>
                     
+                    <div style="margin: 20px 0;">
+                        <p><strong>Current Challenge:</strong> Existing tools provide AI-assisted features (email drafting, call summaries) but require human review and action for every step. Teams still manually manage low-value accounts, research district changes, and handle routine follow-ups that consume valuable selling time.</p>
+                        <p><strong>Business Impact:</strong> Without autonomous AI capabilities, teams cannot achieve the 30% automation target. Manual processes continue consuming time that should be spent on high-value relationship building and strategic account development.</p>
+                        <p><strong>How This Initiative Drives Revenue:</strong> True AI automation frees reps from administrative work, allowing focus on strategic selling activities. Autonomous account management for tier-3 accounts enables coverage at scale while identifying expansion opportunities automatically.</p>
+                    </div>
+                    
                     <div class="comparison-grid">
                         <div class="capability-box outreach">
                             <h5>Outreach Approach</h5>
@@ -912,6 +965,12 @@
                     <h3>2. Tool Consolidation Initiative</h3>
                     <div class="initiative-quote">
                         "We have 50-60 licenses... only 4 being used well. We need to merge all this together" - Nathan Johnson
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <p><strong>Current Challenge:</strong> Teams cannot answer basic questions like "How many meetings did we have last month?" due to disconnected systems. Each tool requires separate administration, training, and creates its own data silo. The CS team uses different conversation intelligence than sales, breaking the customer journey visibility.</p>
+                        <p><strong>Business Impact:</strong> Tool fragmentation costs significantly more than license fees through lost productivity, data silos, and administrative overhead. Teams waste time switching between systems rather than selling.</p>
+                        <p><strong>How This Initiative Drives Revenue:</strong> Unified platform enables complete customer journey visibility, consistent processes across teams, and eliminates context loss during handoffs. Single source of truth improves decision-making and accelerates deal velocity.</p>
                     </div>
                     
                     <div class="comparison-grid">
@@ -949,6 +1008,12 @@
                         "We actually just finalized our success criteria for pilots... rolled that out company wide today" - January Hodge
                     </div>
                     
+                    <div style="margin: 20px 0;">
+                        <p><strong>Current Challenge:</strong> Pilots are currently tracked in scattered Google Docs with no consistency, visibility, or accountability. There's no collaborative workspace with customers, no automated milestone tracking, and no centralized repository for pilot resources and documentation.</p>
+                        <p><strong>Business Impact:</strong> Inconsistent pilot management directly impacts win rates. Without standardized processes, successful pilot approaches can't be replicated, and milestone slippage goes unnoticed until deals are at risk.</p>
+                        <p><strong>How This Initiative Drives Revenue:</strong> Systematic pilot execution with clear success criteria and customer collaboration significantly improves conversion rates. Standardized approach enables replication of successful methodologies across all reps.</p>
+                    </div>
+                    
                     <div class="comparison-grid">
                         <div class="capability-box outreach">
                             <h5>Outreach Success Plans</h5>
@@ -982,6 +1047,12 @@
                     <h3>4. Data Integrity & Activity Capture</h3>
                     <div class="initiative-quote">
                         "We have a whole year now of basically no history at all of activity" - Ann Kurtz
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <p><strong>Current Challenge:</strong> SalesLoft's individual user connections fail randomly when people get logged out or passwords change. Activities don't sync properly, emails go missing, and there's no visibility into what's actually happening in the sales process. Manual "Loft It" clicking is required but often forgotten.</p>
+                        <p><strong>Business Impact:</strong> Data loss prevents accurate performance measurement, forecasting, and coaching. Leadership can't make informed decisions without reliable activity data, undermining all revenue operations.</p>
+                        <p><strong>How This Initiative Drives Revenue:</strong> Reliable data capture enables accurate forecasting, effective coaching, and data-driven decision making. Complete activity history provides insights that improve sales methodologies and rep performance.</p>
                     </div>
                     
                     <div class="comparison-grid">
@@ -1039,9 +1110,15 @@
                 <h2>Key Process Comparison</h2>
                 
                 <div class="initiative-card">
-                    <h3>Deal Management Process</h3>
+                    <h3>1. Deal Management Process</h3>
                     <div class="initiative-quote">
                         "Literally 5 clicks in Salesforce... lots of clicks for sure" - January Hodge
+                    </div>
+                    <div style="margin: 15px 0;">
+                        <p><strong>Business Process:</strong> Sales reps need to track opportunities, update deal information, monitor health, and manage next steps across dozens of active deals simultaneously. January reports "literally 5 clicks in Salesforce" just to check basic deal information, with everything being "lots of clicks for sure."</p>
+                        <p><strong>Current Challenge:</strong> Field reps waste 30-45 minutes daily navigating Salesforce's complex interface. The fragmented view makes it impossible to quickly assess deal health or identify at-risk opportunities.</p>
+                        <p><strong>Why This Matters:</strong> Inefficient deal management directly impacts revenue velocity. Time spent clicking through Salesforce screens is time not spent selling. Missing risk signals due to poor visibility leads to surprise losses and inaccurate forecasting.</p>
+                        <p><strong>How This Process Drives Revenue:</strong> Streamlined deal management enables reps to focus on selling activities. Early risk detection allows intervention while deals are still salvageable. Quick access to deal information improves responsiveness to customer needs.</p>
                     </div>
                     <div class="comparison-grid">
                         <div class="capability-box outreach">
@@ -1069,7 +1146,13 @@
                 </div>
                 
                 <div class="initiative-card">
-                    <h3>BDR → Sales → CS Handoff Process</h3>
+                    <h3>2. BDR → Sales → CS Handoff Process</h3>
+                    <div style="margin: 15px 0;">
+                        <p><strong>Business Process:</strong> Critical information must flow seamlessly from initial BDR contact through sales process to customer success, maintaining context and commitments throughout the customer journey.</p>
+                        <p><strong>Current Challenge:</strong> Handoffs currently lose critical context as teams use different tools and have no unified view of customer interactions. BDRs use SalesLoft, CS uses Chorus, sales uses various tools - creating information silos that reduce customer experience quality and force redundant discovery conversations.</p>
+                        <p><strong>Why This Matters:</strong> Lost context means reps waste time re-discovering information, customers get frustrated repeating themselves, and critical commitments made during sales get forgotten during implementation - directly impacting customer satisfaction and retention.</p>
+                        <p><strong>How This Process Drives Revenue:</strong> Seamless handoffs improve customer experience and accelerate implementation. Complete context preservation enables personalized service and prevents commitments from being lost. Unified platform eliminates redundant discovery reducing sales cycle length.</p>
+                    </div>
                     <div class="comparison-grid">
                         <div class="capability-box outreach">
                             <h5>Outreach Approach</h5>
@@ -1096,7 +1179,13 @@
                 </div>
                 
                 <div class="initiative-card">
-                    <h3>Account Intelligence & AI Search</h3>
+                    <h3>3. Account Intelligence & AI Search</h3>
+                    <div style="margin: 15px 0;">
+                        <p><strong>Business Process:</strong> Teams need to quickly access and analyze all historical interactions with an account, identify patterns, and extract insights from hundreds of conversations. With conversations scattered across multiple tools and no unified search capability, teams cannot answer questions like "What concerns were raised in the last two months?"</p>
+                        <p><strong>Current Challenge:</strong> External changes like district leadership transitions go unnoticed until deals are already at risk. Time spent manually gathering intelligence is time not spent on revenue-generating activities.</p>
+                        <p><strong>Why This Matters:</strong> Missing critical intelligence leads to poor strategic decisions, missed expansion opportunities, and blindsided losses when external changes occur.</p>
+                        <p><strong>How This Process Drives Revenue:</strong> Instant access to comprehensive account intelligence enables strategic decision-making. External monitoring provides competitive advantage by identifying opportunities and risks before competitors. AI-powered insights reveal patterns that drive better sales strategies.</p>
+                    </div>
                     <div class="comparison-grid">
                         <div class="capability-box outreach">
                             <h5>Outreach Approach</h5>
@@ -1117,835 +1206,899 @@
                                 <li>Deal intelligence aggregation</li>
                                 <li class="limitation">No external intelligence monitoring</li>
                                 <li class="limitation">Limited to internal conversation data</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Highspot Content Enablement</h3>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>Live content cards trigger during calls</li>
-                                <li>Battle cards appear on competitor mentions</li>
-                                <li>Sales play tracking shows adoption rates</li>
-                                <li>Content recommendations based on context</li>
-                                <li>Direct Highspot integration in workflow</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Basic content repository connection</li>
-                                <li>Manual content access during calls</li>
-                                <li>Content usage tracking</li>
-                                <li class="limitation">No real-time content triggering</li>
-                                <li class="limitation">Less contextual content delivery</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Pilot Management Process</h3>
-                    <div class="initiative-quote">
-                        "We actually just finalized our success criteria... rolled that out company wide today" - January
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Success Plans</h5>
-                            <ul class="capability-list">
-                                <li>Replace Google Docs with structured templates</li>
-                                <li>Phase-based pilot management (Setup → Pilot → Assessment)</li>
-                                <li>Customer portal for transparency and accountability</li>
-                                <li>Success criteria tracking with baseline metrics</li>
-                                <li>Automated alerts on milestone slippage</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Track pilot discussions in conversations</li>
-                                <li>Deal stage tracking for pilot progress</li>
-                                <li>Risk detection if pilots stall</li>
-                                <li class="limitation">No native Success Plans capability</li>
-                                <li class="limitation">Continue using Google Docs or external tools</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Conversation Fragmentation</h3>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>Single conversation intelligence for all teams</li>
-                                <li>Unified recording and transcription</li>
-                                <li>Consistent coaching framework across roles</li>
-                                <li>Aggregated insights from BDR to CS</li>
-                                <li>One admin console for governance</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Strong CI platform for all conversations</li>
-                                <li>Consistent recording across teams</li>
-                                <li>Unified coaching insights</li>
-                                <li class="limitation">May still require ChurnZero for CS workflows</li>
-                                <li class="limitation">Engage vs Core Gong separation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Activity Capture Process</h3>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>Automatic capture without "Loft It" clicking</li>
-                                <li>Single integration user prevents logout issues</li>
-                                <li>Mobile activities captured automatically</li>
-                                <li>Meeting outcomes tracked (held/no-show)</li>
-                                <li>LinkedIn touches logged as activities</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Automatic logging of Engage activities</li>
-                                <li>Call recordings captured reliably</li>
-                                <li>Email tracking through Engage</li>
-                                <li class="limitation">Less comprehensive activity types</li>
-                                <li class="limitation">Manual logging still required for some activities</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Forecasting & Pipeline Review</h3>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>AI projections with 95% accuracy potential</li>
-                                <li>Unified forecasting for new business and renewals</li>
-                                <li>Pipeline coverage analysis by segment</li>
-                                <li>Deal pacing insights and commit probability</li>
-                                <li>Bottom-up rep forecasting rolls to leadership</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Interaction-based forecast predictions</li>
-                                <li>Pipeline analytics and trends</li>
-                                <li>Risk identification from conversations</li>
-                                <li>Deal inspection capabilities</li>
-                                <li class="limitation">Less sophisticated AI modeling</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Coaching Process</h3>
-                    <div class="initiative-quote">
-                        "We've just been so darn busy. We have not had an opportunity to get in there" - Dirk Hamilton
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>AI coach cards automatically score calls</li>
-                                <li>Custom scorecards by call type</li>
-                                <li>Manager dashboards prioritize coaching needs</li>
-                                <li>Performance tracking without manual review</li>
-                                <li>Real-time prompts during live calls</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Comprehensive call analytics for coaching</li>
-                                <li>Topic and skill tracking</li>
-                                <li>Manager insights and team performance</li>
-                                <li>Call library for best practices</li>
-                                <li class="limitation">Post-call analysis only, no real-time guidance</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>External Intelligence Process</h3>
-                    <div class="initiative-quote">
-                        "Lot of turnover and churn within school districts personnel" - Dirk Hamilton
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>Outreach Approach</h5>
-                            <ul class="capability-list">
-                                <li>AI agents monitor .edu/.gov sites continuously</li>
-                                <li>Automatic alerts on superintendent changes</li>
-                                <li>Grant opportunity identification</li>
-                                <li>Test score and performance updates</li>
-                                <li>Board meeting decisions tracked</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>Gong Approach</h5>
-                            <ul class="capability-list">
-                                <li>Internal conversation monitoring only</li>
-                                <li>No external data sources</li>
-                                <li class="limitation">No district monitoring capabilities</li>
-                                <li class="limitation">Manual research still required</li>
-                                <li class="limitation">Miss critical external changes</li>
-                            </ul>
-                        </div>
+</ul>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Stakeholder Impact -->
-        <section id="stakeholders" class="section">
-            <div class="container">
-                <h2>Stakeholder Impact Analysis</h2>
-                
-                <!-- Rich Watson -->
-                <div class="stakeholder-card">
-                    <h4>Rich Watson - CRO</h4>
-                    <p class="role">Executive Sponsor - AI Transformation & Tool Consolidation Mandate</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses Rich's Needs</h5>
-                            <ul class="capability-list">
-                                <li>AI agents achieve and exceed 30% automation target</li>
-                                <li>Single platform consolidates 4+ tools into one</li>
-                                <li>Complete revenue visibility from BDR to renewal</li>
-                                <li>Predictive forecasting with 95% accuracy potential</li>
-                                <li>Success Plans align with pilot standardization</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses Rich's Needs</h5>
-                            <ul class="capability-list">
-                                <li>AI-powered insights improve decision making</li>
-                                <li>Conversation intelligence drives coaching at scale</li>
-                                <li>Deal intelligence identifies risks proactively</li>
-                                <li>Forecasting based on interaction data</li>
-                                <li class="limitation">AI assists rather than automates workflows</li>
-                                <li class="limitation">Partial consolidation - still need other tools</li>
-                            </ul>
-                        </div>
-                    </div>
+            
+            <div class="initiative-card">
+                <h3>4. Highspot Content Enablement</h3>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> Sales reps need instant access to relevant content during customer conversations, with battle cards, pitch decks, and competitive intelligence surfaced at the moment of need. Content lives in Highspot but isn't leveraged in real-time during calls.</p>
+                    <p><strong>Current Challenge:</strong> Reps must manually search for resources, often missing opportunities to address objections or competitive concerns because they can't find the right content quickly enough.</p>
+                    <p><strong>Why This Matters:</strong> Delayed or missing content reduces deal velocity and win rates. Manual content search disrupts conversation flow and reduces rep confidence.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> Instant access to the right content during conversations directly impacts win rates. When a competitor is mentioned or an objection raised, having immediate access to battle cards and talking points can make the difference between advancing or losing a deal.</p>
                 </div>
-                
-                <!-- Nathan Johnson -->
-                <div class="stakeholder-card">
-                    <h4>Nathan Johnson - BDR Manager</h4>
-                    <p class="role">Champion - Managing 60 licenses with only 4 active users</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses Nathan's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Deep sequence analytics show why 4 succeed while 56 don't</li>
-                                <li>Built-in speed-to-lead automation</li>
-                                <li>AI coaching at scale without manual review</li>
-                                <li>Unified platform his team can actually adopt</li>
-                                <li>Proven success from Instructure experience</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses Nathan's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Engage provides flows for BDR sequences</li>
-                                <li>Call coaching through conversation intelligence</li>
-                                <li>Basic flow analytics and reporting</li>
-                                <li class="limitation">Newer platform with limited engagement analytics</li>
-                                <li class="limitation">Less mature sequence optimization capabilities</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Ann Kurtz -->
-                <div class="stakeholder-card">
-                    <h4>Ann Kurtz - Director of RevOps</h4>
-                    <p class="role">Technical Decision Maker - Concerned about integration reliability</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses Ann's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Single integration user architecture prevents failures</li>
-                                <li>Real-time API monitoring and throttling</li>
-                                <li>Full custom object support for complex data model</li>
-                                <li>Unmanaged Salesforce package for flexibility</li>
-                                <li>Error logging with remediation instructions</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses Ann's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Standard Salesforce integration</li>
-                                <li>Reliable conversation data sync</li>
-                                <li>Simpler setup with fewer configuration options</li>
-                                <li class="limitation">Limited custom object support</li>
-                                <li class="limitation">Less granular sync control</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- January Hodge -->
-                <div class="stakeholder-card">
-                    <h4>January Hodge - VP Sales (Hunters)</h4>
-                    <p class="role">Field Sales Leader - Needs mobile tools and pilot management</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses January's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Deal grid "way less clunky than Salesforce"</li>
-                                <li>Success Plans for standardized pilot management</li>
-                                <li>Mobile app with recording coming H1 2025</li>
-                                <li>Supports any task type including in-person meetings</li>
-                                <li>AI health scores flag inactive deals</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses January's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Deal execution views for opportunity tracking</li>
-                                <li>Mobile app for call recording</li>
-                                <li>Risk alerts based on conversation patterns</li>
-                                <li class="limitation">No Success Plans capability</li>
-                                <li class="limitation">Less focus on field sales workflows</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Rebecca -->
-                <div class="stakeholder-card">
-                    <h4>Rebecca - VP Renewals & Partnerships</h4>
-                    <p class="role">Renewal Leader - Needs proactive risk identification</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses Rebecca's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Automated renewal sequences by date and usage</li>
-                                <li>AI identifies expansion opportunities</li>
-                                <li>Relationship mapping for multi-threading</li>
-                                <li>Proactive risk detection from activity patterns</li>
-                                <li>Integration with usage data for health scoring</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses Rebecca's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Conversation insights identify renewal risks</li>
-                                <li>Deal warnings based on engagement</li>
-                                <li>Stakeholder tracking in conversations</li>
-                                <li class="limitation">Manual renewal process setup</li>
-                                <li class="limitation">Limited post-sale automation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Dirk Hamilton -->
-                <div class="stakeholder-card">
-                    <h4>Dirk Hamilton - Head of Customer Success</h4>
-                    <p class="role">CS Leader - Needs context from sales and external intelligence</p>
-                    
-                    <div class="comparison-grid">
-                        <div class="capability-box outreach">
-                            <h5>How Outreach Addresses Dirk's Needs</h5>
-                            <ul class="capability-list">
-                                <li>External monitoring of district changes</li>
-                                <li>Complete pre-sales context aggregated</li>
-                                <li>AI coaching without manual review time</li>
-                                <li>Pushes insights to ChurnZero via Salesforce</li>
-                                <li>Unified conversation intelligence across teams</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="capability-box gong">
-                            <h5>How Gong Addresses Dirk's Needs</h5>
-                            <ul class="capability-list">
-                                <li>Native ChurnZero integration for summaries</li>
-                                <li>Strong conversation intelligence heritage</li>
-                                <li>Call coaching insights readily available</li>
-                                <li>Less change management with current Chorus use</li>
-                                <li class="limitation">No external intelligence monitoring</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Team Analysis -->
-        <section id="teams" class="section">
-            <div class="container">
-                <h2>Team-by-Team Analysis</h2>
-                
-                <div class="team-grid">
-                    <!-- BDR Team -->
-                    <div class="team-card">
-                        <h4>BDR Team (Nathan - 60 Licenses)</h4>
-                        <p class="current-state">Current: 4 of 60 SalesLoft licenses used, manual speed-to-lead, limited coaching visibility</p>
-                        <div class="comparison-content">
-                            <p><strong>Outreach:</strong> Mature sequence platform with deep analytics, AI-powered optimization, built-in speed-to-lead, automated coaching insights. Platform Nathan knows and trusts from Instructure.</p>
-                            <p><strong>Gong:</strong> Engage provides flows with auto-email and LinkedIn steps, conversation coaching, basic flow metrics. Newer platform still building engagement depth.</p>
-                        </div>
-                        <p class="verdict outreach-wins">Platform Fit: Outreach - Proven BDR platform with adoption track record</p>
-                    </div>
-                    
-                    <!-- Hunters Team -->
-                    <div class="team-card">
-                        <h4>Hunters/Field Sales (January)</h4>
-                        <p class="current-state">Current: "5 clicks in Salesforce", primarily in-person sales, Google Docs for pilots</p>
-                        <div class="comparison-content">
-                            <p><strong>Outreach:</strong> Deal grid interface, Success Plans for pilots, mobile app with recording coming, supports in-person meeting workflows, AI health scoring.</p>
-                            <p><strong>Gong:</strong> Deal execution views, conversation insights, risk detection. No Success Plans capability, less field sales focus.</p>
-                        </div>
-                        <p class="verdict outreach-wins">Platform Fit: Outreach - Built for complex field sales with pilots</p>
-                    </div>
-                    
-                    <!-- Renewals Team -->
-                    <div class="team-card">
-                        <h4>Renewals Team (Rebecca)</h4>
-                        <p class="current-state">Current: Manual tracking, no automated alerts, reactive risk identification</p>
-                        <div class="comparison-content">
-                            <p><strong>Outreach:</strong> Automated renewal sequences, AI expansion identification, relationship mapping, proactive risk alerts, usage integration.</p>
-                            <p><strong>Gong:</strong> Conversation-based risk detection, deal warnings, stakeholder tracking. Requires manual renewal setup.</p>
-                        </div>
-                        <p class="verdict outreach-wins">Platform Fit: Outreach - Purpose-built renewal automation</p>
-                    </div>
-                    
-                    <!-- CS Team -->
-                    <div class="team-card">
-                        <h4>Customer Success (Dirk)</h4>
-                        <p class="current-state">Current: Separate Chorus, integrated with ChurnZero, limited coaching time</p>
-                        <div class="comparison-content">
-                            <p><strong>Outreach:</strong> External district monitoring, full sales context, AI coaching, pushes to ChurnZero via Salesforce.</p>
-                            <p><strong>Gong:</strong> Native ChurnZero integration, strong CI capabilities, direct summary sync, minimal workflow change.</p>
-                        </div>
-                        <p class="verdict context-dependent">Platform Fit: Context Dependent - Gong for pure CS, Outreach for unified operations</p>
-                    </div>
-                    
-                    <!-- RevOps Team -->
-                    <div class="team-card">
-                        <h4>Revenue Operations (Ann)</h4>
-                        <p class="current-state">Current: "Whole year of no history", broken integrations, heavy admin burden</p>
-                        <div class="comparison-content">
-                            <p><strong>Outreach:</strong> Enterprise architecture with single integration user, API monitoring, custom object support, error prevention.</p>
-                            <p><strong>Gong:</strong> Simpler setup, standard integration, less configuration complexity. Limited custom object support.</p>
-                        </div>
-                        <p class="verdict outreach-wins">Platform Fit: Outreach - Enterprise architecture for complex requirements</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Tool Integrations -->
-        <section id="integrations" class="section">
-            <div class="container">
-                <h2>Current Tool Integration Analysis</h2>
-                
-                <h3 style="margin: 30px 0;">Salesforce Integration</h3>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>Outreach</th>
-                            <th>Gong</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Integration Architecture</strong></td>
-                            <td>Single integration user for all connections</td>
-                            <td>Standard user-based connections</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Custom Objects</strong></td>
-                            <td>Full support with governance controls</td>
-                            <td>Limited custom object support</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sync Reliability</strong></td>
-                            <td>Real-time with conflict resolution</td>
-                            <td>Standard sync intervals</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Activity Capture</strong></td>
-                            <td>Automatic without manual logging</td>
-                            <td>Automatic for supported activities</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Reporting Package</strong></td>
-                            <td>Unmanaged (fully customizable)</td>
-                            <td>Standard reporting options</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <h3 style="margin: 30px 0;">ChurnZero Integration</h3>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>Outreach</th>
-                            <th>Gong</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Integration Type</strong></td>
-                            <td>Via Salesforce fields (indirect)</td>
-                            <td>Native direct integration</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Data Flow</strong></td>
-                            <td>Enriched fields pushed to Salesforce, then to ChurnZero</td>
-                            <td>Direct sync of summaries and links</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Workflow Impact</strong></td>
-                            <td>Insights accessible via embedded links</td>
-                            <td>Summaries appear directly in timelines</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Setup Complexity</strong></td>
-                            <td>Requires field mapping configuration</td>
-                            <td>Simple native connection</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Assessment</strong></td>
-                            <td>Viable but requires more setup</td>
-                            <td><strong>Advantage: Native integration</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <h3 style="margin: 30px 0;">Highspot Integration</h3>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>Outreach</th>
-                            <th>Gong</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Content Access</strong></td>
-                            <td>Live content cards during calls</td>
-                            <td>Basic repository connection</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Battle Cards</strong></td>
-                            <td>Auto-trigger on competitor mentions</td>
-                            <td>Manual access required</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sales Play Tracking</strong></td>
-                            <td>Usage analytics and adoption metrics</td>
-                            <td>Limited tracking capabilities</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Assessment</strong></td>
-                            <td><strong>Advantage: Active integration</strong></td>
-                            <td>Passive repository only</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-        <!-- Solution Mapping -->
-        <section id="solution-mapping" class="section">
-            <div class="container">
-                <h2>Critical Solution Mapping: Top 10 Pain Points</h2>
-                
-                <div class="solution-card">
-                    <div class="solution-number">1</div>
-                    <h4>The Lost Year of Data</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> "A whole year now of basically no history at all of activity" - cannot answer CEO's basic questions about meetings.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Single integration user architecture that never logs out, automatic activity capture without manual clicking, real-time sync with conflict resolution. Makes data loss architecturally impossible.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Transform from data desert to predictive intelligence with complete activity history preserved.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">2</div>
-                    <h4>The 30% AI Automation Mandate</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> Rich mandated "30% of every job should leverage AI" with interest in "agentic measures" - autonomous agents, not just assistance.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> AI Revenue Agents manage 3,000+ tier-3 accounts completely autonomously. Gemini Research Agent monitors districts. Smart Deal Assist scores opportunities. Exceeds 30% by automating entire workflows.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Angela's commercial team is highest-performing specifically because AI handles all low-value work.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">3</div>
-                    <h4>Pilot Standardization Crisis</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> ~50% of deals require pilots, currently tracked in scattered Google Docs with no consistency or visibility.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Success Plans provide templatized phases, customer collaboration portals, automated milestone tracking, and resource libraries. Rolled out same day as company initiative.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Nathan's assessment: "That would honestly be music to Rich's ears" - systematic pilot execution.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">4</div>
-                    <h4>Five-Click Productivity Drain</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> January: "Literally 5 clicks in Salesforce" to check basic deal information, field reps waste 30-45 minutes daily.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Deal grid shows everything on one screen with in-line editing. January validated as "way less clunky than Salesforce." Mobile app enables field updates.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> 30-45 minutes saved daily per rep compounds to millions in annual productivity.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">5</div>
-                    <h4>Invisible Risk Detection</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> Rebecca: "No response...bringing in stakeholders we didn't have before" - risks identified too late.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> AI health scores proactively surface response rates, stakeholder changes, rep activity patterns, and stage duration anomalies before deals go dark.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Predictive risk management allows intervention while deals are still salvageable.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">6</div>
-                    <h4>Coaching Time Bankruptcy</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> Dirk: "We've just been so darn busy. We have not as leaders had an opportunity to get in there."
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> AI-powered coach cards automatically score calls, surface coaching moments, track improvement without managers listening to every call.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Transform from time-bankrupt to insight-rich coaching that scales across entire team.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">7</div>
-                    <h4>District Intelligence Vacuum</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> "Lot of turnover and churn within school districts personnel" - constant uncertainty about decision makers.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> AI agents continuously monitor .edu/.gov sites for superintendent changes, grant awards, test scores. Automatically updates records and triggers alerts.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Prevents being blindsided by changes competitors might miss.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">8</div>
-                    <h4>Tool Adoption Failure</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> "50-60 licenses with only 4 being used well" - massive waste and limited value realization.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Unified platform where all teams operate from same system. Nathan's proven success at Instructure. Single source of truth from BDR to CS.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Transform from 7% adoption to company-wide usage with proven playbooks.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">9</div>
-                    <h4>Renewal Blindness</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> Rebecca tracks renewals manually with no automated alerts or expansion identification.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Automated renewal sequences triggered by dates/usage, AI identifies expansion opportunities, relationship mapping for multi-threading.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Transform reactive fire-fighting to proactive relationship nurturing.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-number">10</div>
-                    <h4>Handoff Context Loss</h4>
-                    <p style="margin: 15px 0;">
-                        <strong>Pain Point:</strong> Critical information lost between BDR → Sales → CS transitions, reducing customer experience quality.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Outreach Solution:</strong> Complete activity history follows account, AI aggregates all touchpoints, conversation intelligence preserved across lifecycle, Success Plans transfer commitments.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <strong>Impact:</strong> Every team member has full context from first touch to renewal, eliminating redundant discovery.
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Platform Assessment -->
-        <section id="assessment" class="section">
-            <div class="container">
-                <h2>Platform Assessment Summary</h2>
-                
-                <div class="initiative-card">
-                    <h3>Outreach Strengths for Amira</h3>
-                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
-                        <li style="padding: 10px 0;">✓ <strong>Complete Platform:</strong> Full revenue lifecycle from BDR to renewal in one system</li>
-                        <li style="padding: 10px 0;">✓ <strong>Success Plans:</strong> Purpose-built for pilot management - critical differentiator</li>
-                        <li style="padding: 10px 0;">✓ <strong>Enterprise Architecture:</strong> Prevents data disasters with proven reliability</li>
-                        <li style="padding: 10px 0;">✓ <strong>AI Agents:</strong> Autonomous capabilities exceed 30% mandate - architecture that can't be replicated</li>
-                        <li style="padding: 10px 0;">✓ <strong>Engagement Analytics:</strong> Deep insights into what drives success</li>
-                        <li style="padding: 10px 0;">✓ <strong>Field Sales Support:</strong> Mobile and in-person meeting workflows</li>
-                        <li style="padding: 10px 0;">✓ <strong>External Intelligence:</strong> Monitors district changes automatically</li>
-                    </ul>
-                </div>
-                
-                <div class="initiative-card">
-                    <h3>Gong Engage Strengths for Amira</h3>
-                    <ul style="list-style: none; padding: 0; margin: 20px 0;">
-                        <li style="padding: 10px 0;">✓ <strong>Conversation Intelligence:</strong> Market-leading CI capabilities</li>
-                        <li style="padding: 10px 0;">✓ <strong>ChurnZero Integration:</strong> Native connection preserves CS workflows</li>
-                        <li style="padding: 10px 0;">✓ <strong>Simpler Implementation:</strong> Less complex setup and configuration</li>
-                        <li style="padding: 10px 0;">✓ <strong>Deal Analytics:</strong> Strong pipeline and forecast insights</li>
-                        <li style="padding: 10px 0;">✓ <strong>Lower Change Management:</strong> CS team familiar with Gong via Chorus</li>
-                        <li style="padding: 10px 0;">✓ <strong>Proven CI Platform:</strong> Established market leader in conversation intelligence</li>
-                    </ul>
-                </div>
-                
-                <div class="initiative-card" style="background: var(--gray-lightest); border-left-color: var(--text-medium);">
-                    <h3>Key Considerations for Decision</h3>
-                    <div style="margin: 20px 0;">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Platform Philosophy Difference</h4>
-                        <p style="margin-bottom: 15px;"><strong>Outreach:</strong> Built as complete revenue workflow platform with sales engagement at its core, expanded to full lifecycle</p>
-                        <p style="margin-bottom: 20px;"><strong>Gong:</strong> Built as conversation intelligence platform, with Engage added to provide sales engagement capabilities</p>
-                        
-                        <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Critical Capability Gaps</h4>
-                        <ul style="padding-left: 25px; margin-bottom: 20px;">
-                            <li style="margin: 8px 0;"><strong>Success Plans:</strong> Only Outreach offers - critical for pilot management</li>
-                            <li style="margin: 8px 0;"><strong>AI Agents:</strong> Only Outreach provides autonomous capabilities that can't be replicated</li>
-                            <li style="margin: 8px 0;"><strong>External Intelligence:</strong> Only Outreach monitors district changes</li>
-                            <li style="margin: 8px 0;"><strong>ChurnZero Integration:</strong> Gong has native advantage</li>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>Live content cards trigger during calls</li>
+                            <li>Battle cards appear on competitor mentions</li>
+                            <li>Sales play tracking shows adoption rates</li>
+                            <li>Content recommendations based on context</li>
+                            <li>Direct Highspot integration in workflow</li>
                         </ul>
-                        
-                        <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Risk Assessment</h4>
-                        <p style="margin-bottom: 15px;"><strong>Outreach Risk:</strong> More complex implementation requiring dedicated RevOps resources</p>
-                        <p style="margin-bottom: 20px;"><strong>Gong Risk:</strong> Engage platform maturity and missing critical capabilities like Success Plans</p>
-                        
-                        <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Strategic Alignment</h4>
-                        <p>Based on the evaluation, Outreach more closely aligns with Rich's transformation vision (AI agents), January's pilot requirements (Success Plans), and Ann's enterprise needs (architecture). Gong better preserves CS team workflows but requires accepting gaps in other areas.</p>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Basic content repository connection</li>
+                            <li>Manual content access during calls</li>
+                            <li>Content usage tracking</li>
+                            <li class="limitation">No real-time content triggering</li>
+                            <li class="limitation">Less contextual content delivery</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-    
-    <script>
-        // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('navToggle');
-            const sidebar = document.getElementById('sidebarNav');
-            const mainContent = document.getElementById('mainContent');
-            const navLinks = document.querySelectorAll('.nav-link');
             
-            // Toggle navigation
-            navToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('collapsed');
-                mainContent.classList.toggle('expanded');
-            });
-            
-            // Active section highlighting
-            function setActiveSection() {
-                const scrollPosition = window.scrollY;
-                const sections = document.querySelectorAll('.section');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
-                    const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            <div class="initiative-card">
+                <h3>5. Conversation Fragmentation</h3>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> All customer-facing teams need access to complete conversation history for coaching, handoffs, and strategic account planning. Conversations live in different systems - BDRs in SalesLoft, CS in Chorus, some reps using Sybil.</p>
+                    <p><strong>Current Challenge:</strong> This fragmentation prevents unified coaching, breaks customer journey visibility, and requires multiple tool licenses and training.</p>
+                    <p><strong>Why This Matters:</strong> Fragmented conversation intelligence means managers can't effectively coach across teams, valuable insights get trapped in silos, and the organization lacks a complete view of customer relationships.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> Unified conversation intelligence enables consistent coaching, complete customer insights, and seamless handoffs. Single platform reduces training costs and increases adoption.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>Single conversation intelligence for all teams</li>
+                            <li>Unified recording and transcription</li>
+                            <li>Consistent coaching framework across roles</li>
+                            <li>Aggregated insights from BDR to CS</li>
+                            <li>One admin console for governance</li>
+                        </ul>
+                    </div>
                     
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('active');
-                        }
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Strong CI platform for all conversations</li>
+                            <li>Consistent recording across teams</li>
+                            <li>Unified coaching insights</li>
+                            <li class="limitation">May still require ChurnZero for CS workflows</li>
+                            <li class="limitation">Engage vs Core Gong separation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="initiative-card">
+                <h3>6. Activity Capture Process</h3>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> Every customer interaction must be automatically captured and properly attributed to the right contact, account, and opportunity in Salesforce. Current SalesLoft setup requires manual "Loft It" clicking that's often forgotten.</p>
+                    <p><strong>Current Challenge:</strong> Individual user connections fail when people get logged out. Activities attach to wrong records. Result: "a whole year now of basically no history at all of activity."</p>
+                    <p><strong>Why This Matters:</strong> Without reliable activity capture, the organization cannot measure performance, forecast accurately, or even answer basic questions about sales activity. This undermines every revenue operation.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> Automatic activity capture provides complete visibility into sales performance, enables accurate forecasting, and supports data-driven coaching. Reliable data is foundation of revenue optimization.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>Automatic capture without "Loft It" clicking</li>
+                            <li>Single integration user prevents logout issues</li>
+                            <li>Mobile activities captured automatically</li>
+                            <li>Meeting outcomes tracked (held/no-show)</li>
+                            <li>LinkedIn touches logged as activities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Automatic logging of Engage activities</li>
+                            <li>Call recordings captured reliably</li>
+                            <li>Email tracking through Engage</li>
+                            <li class="limitation">Less comprehensive activity types</li>
+                            <li class="limitation">Manual logging still required for some activities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="initiative-card">
+                <h3>7. Forecasting & Pipeline Review</h3>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> Leadership needs accurate, real-time forecasting that rolls up from rep commits through management layers with AI-powered risk identification. Current forecasting described as "really rudimentary" requiring manual triangulation between multiple data sources.</p>
+                    <p><strong>Current Challenge:</strong> No AI-powered predictions, no scenario modeling, and no unified view of new business and renewal pipeline.</p>
+                    <p><strong>Why This Matters:</strong> Accurate forecasting drives strategic decisions, resource allocation, and investor confidence. Poor forecast accuracy undermines leadership credibility and leads to reactive rather than proactive management.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> AI-powered forecasting enables proactive pipeline management and resource planning. Early risk identification allows intervention before deals are lost. Accurate predictions support strategic decision-making.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>AI projections with 95% accuracy potential</li>
+                            <li>Unified forecasting for new business and renewals</li>
+                            <li>Pipeline coverage analysis by segment</li>
+                            <li>Deal pacing insights and commit probability</li>
+                            <li>Bottom-up rep forecasting rolls to leadership</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Interaction-based forecast predictions</li>
+                            <li>Pipeline analytics and trends</li>
+                            <li>Risk identification from conversations</li>
+                            <li>Deal inspection capabilities</li>
+                            <li class="limitation">Less sophisticated AI modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="initiative-card">
+                <h3>8. Coaching Process</h3>
+                <div class="initiative-quote">
+                    "We've just been so darn busy. We have not had an opportunity to get in there" - Dirk Hamilton
+                </div>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> Managers need to efficiently review calls, identify coaching opportunities, provide consistent feedback, and track performance improvement across their teams. Dirk reports "We've just been so darn busy. We have not had an opportunity to get in there."</p>
+                    <p><strong>Current Challenge:</strong> Without time to review calls manually, coaching becomes sporadic and inconsistent. No systematic way to identify which calls need review or track improvement.</p>
+                    <p><strong>Why This Matters:</strong> Consistent coaching drives rep performance and retention. Without scalable coaching processes, performance gaps persist, top performers aren't replicated, and reps don't develop - directly impacting revenue growth.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> Scalable coaching improves rep performance across the team. AI-powered insights identify successful patterns that can be replicated. Consistent feedback accelerates rep development and retention.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>AI coach cards automatically score calls</li>
+                            <li>Custom scorecards by call type</li>
+                            <li>Manager dashboards prioritize coaching needs</li>
+                            <li>Performance tracking without manual review</li>
+                            <li>Real-time prompts during live calls</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Comprehensive call analytics for coaching</li>
+                            <li>Topic and skill tracking</li>
+                            <li>Manager insights and team performance</li>
+                            <li>Call library for best practices</li>
+                            <li class="limitation">Post-call analysis only, no real-time guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="initiative-card">
+                <h3>9. External Intelligence Process</h3>
+                <div class="initiative-quote">
+                    "Lot of turnover and churn within school districts personnel" - Dirk Hamilton
+                </div>
+                <div style="margin: 15px 0;">
+                    <p><strong>Business Process:</strong> Monitoring external changes in school districts including leadership transitions, budget approvals, test scores, and grant awards that impact deal timing and strategy. High turnover in district personnel means constant uncertainty.</p>
+                    <p><strong>Current Challenge:</strong> No systematic way to track superintendent changes, board decisions, or funding announcements. Teams get blindsided when key contacts leave or priorities shift.</p>
+                    <p><strong>Why This Matters:</strong> K-12 sales success depends on timing and relationships. Missing a superintendent change or grant announcement means lost opportunities and wasted effort on the wrong stakeholders.</p>
+                    <p><strong>How This Process Drives Revenue:</strong> Proactive intelligence enables strategic engagement at optimal timing. Early awareness of changes allows relationship building with new decision makers before competitors. Grant intelligence identifies funding opportunities.</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>Outreach Approach</h5>
+                        <ul class="capability-list">
+                            <li>AI agents monitor .edu/.gov sites continuously</li>
+                            <li>Automatic alerts on superintendent changes</li>
+                            <li>Grant opportunity identification</li>
+                            <li>Test score and performance updates</li>
+                            <li>Board meeting decisions tracked</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>Gong Approach</h5>
+                        <ul class="capability-list">
+                            <li>Internal conversation monitoring only</li>
+                            <li>No external data sources</li>
+                            <li class="limitation">No district monitoring capabilities</li>
+                            <li class="limitation">Manual research still required</li>
+                            <li class="limitation">Miss critical external changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stakeholder Impact -->
+    <section id="stakeholders" class="section">
+        <div class="container">
+            <h2>Stakeholder Impact Analysis</h2>
+            
+            <!-- Rich Watson -->
+            <div class="stakeholder-card">
+                <h4>Rich Watson - CRO</h4>
+                <p class="role">Executive Sponsor - AI Transformation & Tool Consolidation Mandate</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses Rich's Needs</h5>
+                        <ul class="capability-list">
+                            <li>AI agents achieve and exceed 30% automation target</li>
+                            <li>Single platform consolidates 4+ tools into one</li>
+                            <li>Complete revenue visibility from BDR to renewal</li>
+                            <li>Predictive forecasting with 95% accuracy potential</li>
+                            <li>Success Plans align with pilot standardization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses Rich's Needs</h5>
+                        <ul class="capability-list">
+                            <li>AI-powered insights improve decision making</li>
+                            <li>Conversation intelligence drives coaching at scale</li>
+                            <li>Deal intelligence identifies risks proactively</li>
+                            <li>Forecasting based on interaction data</li>
+                            <li class="limitation">AI assists rather than automates workflows</li>
+                            <li class="limitation">Partial consolidation - still need other tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nathan Johnson -->
+            <div class="stakeholder-card">
+                <h4>Nathan Johnson - BDR Manager</h4>
+                <p class="role">Champion - Managing 60 licenses with only 4 active users</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses Nathan's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Deep sequence analytics show why 4 succeed while 56 don't</li>
+                            <li>Built-in speed-to-lead automation</li>
+                            <li>AI coaching at scale without manual review</li>
+                            <li>Unified platform his team can actually adopt</li>
+                            <li>Proven success from Instructure experience</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses Nathan's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Engage provides flows for BDR sequences</li>
+                            <li>Call coaching through conversation intelligence</li>
+                            <li>Basic flow analytics and reporting</li>
+                            <li class="limitation">Newer platform with limited engagement analytics</li>
+                            <li class="limitation">Less mature sequence optimization capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ann Kurtz -->
+            <div class="stakeholder-card">
+                <h4>Ann Kurtz - Director of RevOps</h4>
+                <p class="role">Technical Decision Maker - Concerned about integration reliability</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses Ann's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Single integration user architecture prevents failures</li>
+                            <li>Real-time API monitoring and throttling</li>
+                            <li>Full custom object support for complex data model</li>
+                            <li>Unmanaged Salesforce package for flexibility</li>
+                            <li>Error logging with remediation instructions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses Ann's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Standard Salesforce integration</li>
+                            <li>Reliable conversation data sync</li>
+                            <li>Simpler setup with fewer configuration options</li>
+                            <li class="limitation">Limited custom object support</li>
+                            <li class="limitation">Less granular sync control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- January Hodge -->
+            <div class="stakeholder-card">
+                <h4>January Hodge - VP Sales (Hunters)</h4>
+                <p class="role">Field Sales Leader - Needs mobile tools and pilot management</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses January's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Deal grid "way less clunky than Salesforce"</li>
+                            <li>Success Plans for standardized pilot management</li>
+                            <li>Mobile app with recording coming H1 2025</li>
+                            <li>Supports any task type including in-person meetings</li>
+                            <li>AI health scores flag inactive deals</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses January's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Deal execution views for opportunity tracking</li>
+                            <li>Mobile app for call recording</li>
+                            <li>Risk alerts based on conversation patterns</li>
+                            <li class="limitation">No Success Plans capability</li>
+                            <li class="limitation">Less focus on field sales workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rebecca -->
+            <div class="stakeholder-card">
+                <h4>Rebecca - VP Renewals & Partnerships</h4>
+                <p class="role">Renewal Leader - Needs proactive risk identification</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses Rebecca's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Automated renewal sequences by date and usage</li>
+                            <li>AI identifies expansion opportunities</li>
+                            <li>Relationship mapping for multi-threading</li>
+                            <li>Proactive risk detection from activity patterns</li>
+                            <li>Integration with usage data for health scoring</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses Rebecca's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Conversation insights identify renewal risks</li>
+                            <li>Deal warnings based on engagement</li>
+                            <li>Stakeholder tracking in conversations</li>
+                            <li class="limitation">Manual renewal process setup</li>
+                            <li class="limitation">Limited post-sale automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dirk Hamilton -->
+            <div class="stakeholder-card">
+                <h4>Dirk Hamilton - Head of Customer Success</h4>
+                <p class="role">CS Leader - Needs context from sales and external intelligence</p>
+                
+                <div class="comparison-grid">
+                    <div class="capability-box outreach">
+                        <h5>How Outreach Addresses Dirk's Needs</h5>
+                        <ul class="capability-list">
+                            <li>External monitoring of district changes</li>
+                            <li>Complete pre-sales context aggregated</li>
+                            <li>AI coaching without manual review time</li>
+                            <li>Pushes insights to ChurnZero via Salesforce</li>
+                            <li>Unified conversation intelligence across teams</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capability-box gong">
+                        <h5>How Gong Addresses Dirk's Needs</h5>
+                        <ul class="capability-list">
+                            <li>Native ChurnZero integration for summaries</li>
+                            <li>Strong conversation intelligence heritage</li>
+                            <li>Call coaching insights readily available</li>
+                            <li>Less change management with current Chorus use</li>
+                            <li class="limitation">No external intelligence monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Analysis -->
+    <section id="teams" class="section">
+        <div class="container">
+            <h2>Team-by-Team Analysis</h2>
+            
+            <div class="team-grid">
+                <!-- BDR Team -->
+                <div class="team-card">
+                    <h4>BDR Team (Nathan - 60 Licenses)</h4>
+                    <p class="current-state">Current: 4 of 60 SalesLoft licenses used, manual speed-to-lead, limited coaching visibility</p>
+                    <div class="comparison-content">
+                        <p><strong>Outreach:</strong> Mature sequence platform with deep analytics, AI-powered optimization, built-in speed-to-lead, automated coaching insights. Platform Nathan knows and trusts from Instructure.</p>
+                        <p><strong>Gong:</strong> Engage provides flows with auto-email and LinkedIn steps, conversation coaching, basic flow metrics. Newer platform still building engagement depth.</p>
+                    </div>
+                    <p class="verdict outreach-wins">Platform Fit: Outreach - Proven BDR platform with adoption track record</p>
+                </div>
+                
+                <!-- Hunters Team -->
+                <div class="team-card">
+                    <h4>Hunters/Field Sales (January)</h4>
+                    <p class="current-state">Current: "5 clicks in Salesforce", primarily in-person sales, Google Docs for pilots</p>
+                    <div class="comparison-content">
+                        <p><strong>Outreach:</strong> Deal grid interface, Success Plans for pilots, mobile app with recording coming, supports in-person meeting workflows, AI health scoring.</p>
+                        <p><strong>Gong:</strong> Deal execution views, conversation insights, risk detection. No Success Plans capability, less field sales focus.</p>
+                    </div>
+                    <p class="verdict outreach-wins">Platform Fit: Outreach - Built for complex field sales with pilots</p>
+                </div>
+                
+                <!-- Renewals Team -->
+                <div class="team-card">
+                    <h4>Renewals Team (Rebecca)</h4>
+                    <p class="current-state">Current: Manual tracking, no automated alerts, reactive risk identification</p>
+                    <div class="comparison-content">
+                        <p><strong>Outreach:</strong> Automated renewal sequences, AI expansion identification, relationship mapping, proactive risk alerts, usage integration.</p>
+                        <p><strong>Gong:</strong> Conversation-based risk detection, deal warnings, stakeholder tracking. Requires manual renewal setup.</p>
+                    </div>
+                    <p class="verdict outreach-wins">Platform Fit: Outreach - Purpose-built renewal automation</p>
+                </div>
+                
+                <!-- CS Team -->
+                <div class="team-card">
+                    <h4>Customer Success (Dirk)</h4>
+                    <p class="current-state">Current: Separate Chorus, integrated with ChurnZero, limited coaching time</p>
+                    <div class="comparison-content">
+                        <p><strong>Outreach:</strong> External district monitoring, full sales context, AI coaching, pushes to ChurnZero via Salesforce.</p>
+                        <p><strong>Gong:</strong> Native ChurnZero integration, strong CI capabilities, direct summary sync, minimal workflow change.</p>
+                    </div>
+                    <p class="verdict context-dependent">Platform Fit: Context Dependent - Gong for pure CS, Outreach for unified operations</p>
+                </div>
+                
+                <!-- RevOps Team -->
+                <div class="team-card">
+                    <h4>Revenue Operations (Ann)</h4>
+                    <p class="current-state">Current: "Whole year of no history", broken integrations, heavy admin burden</p>
+                    <div class="comparison-content">
+                        <p><strong>Outreach:</strong> Enterprise architecture with single integration user, API monitoring, custom object support, error prevention.</p>
+                        <p><strong>Gong:</strong> Simpler setup, standard integration, less configuration complexity. Limited custom object support.</p>
+                    </div>
+                    <p class="verdict outreach-wins">Platform Fit: Outreach - Enterprise architecture for complex requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tool Integrations -->
+    <section id="integrations" class="section">
+        <div class="container">
+            <h2>Current Tool Integration Analysis</h2>
+            
+            <h3 style="margin: 30px 0;">Salesforce Integration</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Outreach</th>
+                        <th>Gong</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Integration Architecture</strong></td>
+                        <td>Single integration user for all connections</td>
+                        <td>Standard user-based connections</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Custom Objects</strong></td>
+                        <td>Full support with governance controls</td>
+                        <td>Limited custom object support</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sync Reliability</strong></td>
+                        <td>Real-time with conflict resolution</td>
+                        <td>Standard sync intervals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Activity Capture</strong></td>
+                        <td>Automatic without manual logging</td>
+                        <td>Automatic for supported activities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reporting Package</strong></td>
+                        <td>Unmanaged (fully customizable)</td>
+                        <td>Standard reporting options</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin: 30px 0;">ChurnZero Integration</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Outreach</th>
+                        <th>Gong</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Integration Type</strong></td>
+                        <td>Via Salesforce fields (indirect)</td>
+                        <td>Native direct integration</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Flow</strong></td>
+                        <td>Enriched fields pushed to Salesforce, then to ChurnZero</td>
+                        <td>Direct sync of summaries and links</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Workflow Impact</strong></td>
+                        <td>Insights accessible via embedded links</td>
+                        <td>Summaries appear directly in timelines</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Setup Complexity</strong></td>
+                        <td>Requires field mapping configuration</td>
+                        <td>Simple native connection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment</strong></td>
+                        <td>Viable but requires more setup</td>
+                        <td><strong>Advantage: Native integration</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin: 30px 0;">Highspot Integration</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>Outreach</th>
+                        <th>Gong</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Content Access</strong></td>
+                        <td>Live content cards during calls</td>
+                        <td>Basic repository connection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Battle Cards</strong></td>
+                        <td>Auto-trigger on competitor mentions</td>
+                        <td>Manual access required</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sales Play Tracking</strong></td>
+                        <td>Usage analytics and adoption metrics</td>
+                        <td>Limited tracking capabilities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assessment</strong></td>
+                        <td><strong>Advantage: Active integration</strong></td>
+                        <td>Passive repository only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <!-- Solution Mapping -->
+    <section id="solution-mapping" class="section">
+        <div class="container">
+            <h2>Critical Solution Mapping: Top 10 Pain Points</h2>
+            
+            <div class="solution-card">
+                <div class="solution-number">1</div>
+                <h4>The Lost Year of Data</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> "A whole year now of basically no history at all of activity" - cannot answer CEO's basic questions about meetings.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Single integration user architecture that never logs out, automatic activity capture without manual clicking, real-time sync with conflict resolution. Makes data loss architecturally impossible.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Transform from data desert to predictive intelligence with complete activity history preserved.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">2</div>
+                <h4>The 30% AI Automation Mandate</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> Rich mandated "30% of every job should leverage AI" with interest in "agentic measures" - autonomous agents, not just assistance.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> AI Revenue Agents manage 3,000+ tier-3 accounts completely autonomously. Gemini Research Agent monitors districts. Smart Deal Assist scores opportunities. Exceeds 30% by automating entire workflows.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Angela's commercial team is highest-performing specifically because AI handles all low-value work.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">3</div>
+                <h4>Pilot Standardization Crisis</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> ~50% of deals require pilots, currently tracked in scattered Google Docs with no consistency or visibility.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Success Plans provide templatized phases, customer collaboration portals, automated milestone tracking, and resource libraries. Rolled out same day as company initiative.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Nathan's assessment: "That would honestly be music to Rich's ears" - systematic pilot execution.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">4</div>
+                <h4>Five-Click Productivity Drain</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> January: "Literally 5 clicks in Salesforce" to check basic deal information, field reps waste 30-45 minutes daily.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Deal grid shows everything on one screen with in-line editing. January validated as "way less clunky than Salesforce." Mobile app enables field updates.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> 30-45 minutes saved daily per rep compounds to millions in annual productivity.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">5</div>
+                <h4>Invisible Risk Detection</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> Rebecca: "No response...bringing in stakeholders we didn't have before" - risks identified too late.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> AI health scores proactively surface response rates, stakeholder changes, rep activity patterns, and stage duration anomalies before deals go dark.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Predictive risk management allows intervention while deals are still salvageable.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">6</div>
+                <h4>Coaching Time Bankruptcy</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> Dirk: "We've just been so darn busy. We have not as leaders had an opportunity to get in there."
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> AI-powered coach cards automatically score calls, surface coaching moments, track improvement without managers listening to every call.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Transform from time-bankrupt to insight-rich coaching that scales across entire team.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">7</div>
+                <h4>District Intelligence Vacuum</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> "Lot of turnover and churn within school districts personnel" - constant uncertainty about decision makers.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> AI agents continuously monitor .edu/.gov sites for superintendent changes, grant awards, test scores. Automatically updates records and triggers alerts.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Prevents being blindsided by changes competitors might miss.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">8</div>
+                <h4>Tool Adoption Failure</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> "50-60 licenses with only 4 being used well" - massive waste and limited value realization.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Unified platform where all teams operate from same system. Nathan's proven success at Instructure. Single source of truth from BDR to CS.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Transform from 7% adoption to company-wide usage with proven playbooks.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">9</div>
+                <h4>Renewal Blindness</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> Rebecca tracks renewals manually with no automated alerts or expansion identification.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Automated renewal sequences triggered by dates/usage, AI identifies expansion opportunities, relationship mapping for multi-threading.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Transform reactive fire-fighting to proactive relationship nurturing.
+                </p>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-number">10</div>
+                <h4>Handoff Context Loss</h4>
+                <p style="margin: 15px 0;">
+                    <strong>Pain Point:</strong> Critical information lost between BDR → Sales → CS transitions, reducing customer experience quality.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Outreach Solution:</strong> Complete activity history follows account, AI aggregates all touchpoints, conversation intelligence preserved across lifecycle, Success Plans transfer commitments.
+                </p>
+                <p style="margin: 15px 0;">
+                    <strong>Impact:</strong> Every team member has full context from first touch to renewal, eliminating redundant discovery.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gong Constraints -->
+    <section id="gong-constraints" class="section">
+        <div class="container">
+            <h2>Gong Constraints</h2>
+            
+            <div class="constraints-section">
+                <h4>Platform Considerations for Informed Decision Making</h4>
+                <p>While Gong offers strong conversation intelligence capabilities and has recently added engagement features, organizations should carefully evaluate these limitations when considering the platform for complex K-12 education sales operations.</p>
+            </div>
+            
+            <div class="constraint-category">
+                <h5>Engagement Platform Maturity</h5>
+                <div class="constraint-item"><strong>Limited Sequence Sophistication:</strong> Gong Engage (released ~2023) lacks advanced features Outreach has refined over years - no A/B testing of sequence emails, limited send-time optimization, basic conditional logic compared to Outreach's trigger system</div>
+                <div class="constraint-item"><strong>Analytics Gaps:</strong> Sequence performance analytics are basic, making it difficult to understand why certain sequences succeed while others fail - critical given current 7% SalesLoft adoption</div>
+                <div class="constraint-item"><strong>Optimization Limitations:</strong> Without sophisticated testing and optimization capabilities, improving sequence performance requires manual guesswork rather than data-driven iteration</div>
+            </div>
+            
+            <div class="constraint-category">
+                <h5>Missing Critical Capabilities</h5>
+                <div class="constraint-item"><strong>No Success Plans/MAPs:</strong> Complete absence of native pilot management tools means continuing with Google Docs for 50% of deals requiring pilots</div>
+                <div class="constraint-item"><strong>No External Intelligence:</strong> Cannot monitor .edu/.gov sites for district changes, superintendent transitions, or grant opportunities - all require manual research</div>
+                <div class="constraint-item"><strong>Limited Automation:</strong> All AI features require human review and action - cannot achieve autonomous "agentic measures" Rich mandated</div>
+                <div class="constraint-item"><strong>No Advanced Account Planning:</strong> Missing specialized account planning tools beyond basic Salesforce functionality</div>
+            </div>
+            
+            <div class="constraint-category">
+                <h5>Architectural Constraints</h5>
+                <div class="constraint-item"><strong>Modular Design Limitations:</strong> Built as conversation intelligence first with engagement added separately - creates inherent fragmentation between capabilities</div>
+                <div class="constraint-item"><strong>AI in Advisory Mode Only:</strong> Architecture keeps AI suggestions separate from execution, preventing true workflow automation</div>
+                <div class="constraint-item"><strong>Integration Boundaries:</strong> While native ChurnZero integration is strong, limited flexibility for complex custom object scenarios and external system integration</div>
+            </div>
+            
+            <div class="constraint-category">
+                <h5>Scale and Reliability Considerations</h5>
+                <div class="constraint-item"><strong>Newer Platform Risk:</strong> Engage is relatively new to market with limited enterprise validation at Amira's scale</div>
+                <div class="constraint-item"><strong>Feature Gaps:</strong> Many advanced engagement features still in development or missing entirely</div>
+                <div class="constraint-item"><strong>Support Maturity:</strong> Less established playbooks and best practices for complex multi-motion organizations</div>
+            </div>
+            
+            <div class="constraint-category">
+                <h5>Strategic Implications</h5>
+                <div class="constraint-item"><strong>Limited Capability Coverage:</strong> These constraints don't disqualify Gong but significantly impact its ability to address Amira's specific requirements. The platform excels at conversation intelligence and offers good basic engagement, but lacks the architectural foundation for autonomous AI workflows, comprehensive pilot management, and external intelligence gathering that Amira needs.</div>
+                <div class="constraint-item"><strong>Gap Management Required:</strong> For organizations seeking primarily conversation intelligence with basic engagement, Gong provides a solid solution. However, for Amira's complex requirements including autonomous AI agents, Success Plans for pilots, and external district monitoring, these limitations create significant gaps that would require additional tools or manual workarounds.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Platform Assessment -->
+    <section id="assessment" class="section">
+        <div class="container">
+            <h2>Platform Assessment Summary</h2>
+            
+            <div class="initiative-card">
+                <h3>Outreach Strengths for Amira</h3>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="padding: 10px 0;">✓ <strong>Complete Platform:</strong> Full revenue lifecycle from BDR to renewal in one system</li>
+                    <li style="padding: 10px 0;">✓ <strong>Success Plans:</strong> Purpose-built for pilot management - critical differentiator</li>
+                    <li style="padding: 10px 0;">✓ <strong>Enterprise Architecture:</strong> Prevents data disasters with proven reliability</li>
+                    <li style="padding: 10px 0;">✓ <strong>AI Agents:</strong> Autonomous capabilities exceed 30% mandate - architecture that can't be replicated</li>
+                    <li style="padding: 10px 0;">✓ <strong>Engagement Analytics:</strong> Deep insights into what drives success</li>
+                    <li style="padding: 10px 0;">✓ <strong>Field Sales Support:</strong> Mobile and in-person meeting workflows</li>
+                    <li style="padding: 10px 0;">✓ <strong>External Intelligence:</strong> Monitors district changes automatically</li>
+                </ul>
+            </div>
+            
+            <div class="initiative-card">
+                <h3>Gong Engage Strengths for Amira</h3>
+                <ul style="list-style: none; padding: 0; margin: 20px 0;">
+                    <li style="padding: 10px 0;">✓ <strong>Conversation Intelligence:</strong> Market-leading CI capabilities</li>
+                    <li style="padding: 10px 0;">✓ <strong>ChurnZero Integration:</strong> Native connection preserves CS workflows</li>
+                    <li style="padding: 10px 0;">✓ <strong>Simpler Implementation:</strong> Less complex setup and configuration</li>
+                    <li style="padding: 10px 0;">✓ <strong>Deal Analytics:</strong> Strong pipeline and forecast insights</li>
+                    <li style="padding: 10px 0;">✓ <strong>Lower Change Management:</strong> CS team familiar with Gong via Chorus</li>
+                    <li style="padding: 10px 0;">✓ <strong>Proven CI Platform:</strong> Established market leader in conversation intelligence</li>
+                </ul>
+            </div>
+            
+            <div class="initiative-card" style="background: var(--gray-lightest); border-left-color: var(--text-medium);">
+                <h3>Key Considerations for Decision</h3>
+                <div style="margin: 20px 0;">
+                    <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Platform Philosophy Difference</h4>
+                    <p style="margin-bottom: 15px;"><strong>Outreach:</strong> Built as complete revenue workflow platform with sales engagement at its core, expanded to full lifecycle</p>
+                    <p style="margin-bottom: 20px;"><strong>Gong:</strong> Built as conversation intelligence platform, with Engage added to provide sales engagement capabilities</p>
+                    
+                    <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Critical Capability Gaps</h4>
+                    <ul style="padding-left: 25px; margin-bottom: 20px;">
+                        <li style="margin: 8px 0;"><strong>Success Plans:</strong> Only Outreach offers - critical for pilot management</li>
+                        <li style="margin: 8px 0;"><strong>AI Agents:</strong> Only Outreach provides autonomous capabilities that can't be replicated</li>
+                        <li style="margin: 8px 0;"><strong>External Intelligence:</strong> Only Outreach monitors district changes</li>
+                        <li style="margin: 8px 0;"><strong>ChurnZero Integration:</strong> Gong has native advantage</li>
+                    </ul>
+                    
+                    <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Risk Assessment</h4>
+                    <p style="margin-bottom: 15px;"><strong>Outreach Risk:</strong> More complex implementation requiring dedicated RevOps resources</p>
+                    <p style="margin-bottom: 20px;"><strong>Gong Risk:</strong> Engage platform maturity and missing critical capabilities like Success Plans</p>
+                    
+                    <h4 style="color: var(--primary-dark); margin-bottom: 15px;">Strategic Alignment</h4>
+                    <p>Based on the evaluation, Outreach more closely aligns with Rich's transformation vision (AI agents), January's pilot requirements (Success Plans), and Ann's enterprise needs (architecture). Gong better preserves CS team workflows but requires accepting gaps in other areas.</p>
+                </div>
+            </div>
+            
+            <div style="background: var(--primary-dark); color: var(--white); padding: 40px; border-radius: 12px; margin: 40px 0;">
+                <h3 style="color: var(--white); margin-bottom: 25px;">Strategic Recommendation: Outreach</h3>
+                <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+                    <strong>Unified platform enabling autonomous AI transformation and operational excellence</strong>
+                </p>
+                <p style="font-size: 16px; line-height: 1.7; margin-bottom: 15px;">
+                    Outreach represents the strategic platform choice that addresses Amira's immediate consolidation needs while enabling Rich's transformative AI vision. The platform's unified architecture enables autonomous AI agents, native Success Plans solve the pilot management crisis, and enterprise-grade reliability ensures data integrity.
+                </p>
+                <p style="font-size: 16px; line-height: 1.7;">
+                    While Gong offers excellent conversation intelligence and convenient ChurnZero integration, the platform's engagement features are still maturing, it completely lacks Success Plans for pilots, and its modular architecture prevents the autonomous AI workflows Rich explicitly mandated.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('navToggle');
+        const sidebar = document.getElementById('sidebarNav');
+        const mainContent = document.getElementById('mainContent');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Toggle navigation
+        navToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+        });
+        
+        // Active section highlighting
+        function setActiveSection() {
+            const scrollPosition = window.scrollY;
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
                     }
-                });
-            }
-            
-            // Set active section on scroll
-            window.addEventListener('scroll', setActiveSection);
-            
-            // Set initial active section
-            setActiveSection();
-            
-            // Smooth scroll for navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
+                }
+            });
+        }
+        
+        // Set active section on scroll
+        window.addEventListener('scroll', setActiveSection);
+        
+        // Set initial active section
+        setActiveSection();
+        
+        // Smooth scroll for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
-    </script>
-</body>
-</html>
+    });
+</script>
