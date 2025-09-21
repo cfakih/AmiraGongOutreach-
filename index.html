@@ -1932,119 +1932,50 @@
         </div>
     </section>
     
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Gong Constraints</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
+<!-- Gong Constraints -->
+<section id="gong-constraints" class="section">
+    <div class="container">
+        <h2>Gong Constraints</h2>
         
-        .constraint-category {
-            margin-bottom: 30px;
-        }
+        <div class="constraints-section">
+            <h4>Platform Considerations for Informed Decision Making</h4>
+            <p>While Gong offers strong conversation intelligence capabilities and has recently added engagement features, organizations should carefully evaluate these limitations when considering the platform for complex K-12 education sales operations.</p>
+        </div>
         
-        .constraint-category h5 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 8px;
-        }
+        <div class="constraint-category">
+            <h5>Engagement Platform Maturity</h5>
+            <div class="constraint-item"><strong>Limited Sequence Sophistication:</strong> Gong Engage (released ~2023) lacks advanced features Outreach has refined over years - no A/B testing of sequence emails, limited send-time optimization, basic conditional logic compared to Outreach's trigger system</div>
+            <div class="constraint-item"><strong>Analytics Gaps:</strong> Sequence performance analytics are basic, making it difficult to understand why certain sequences succeed while others fail - critical given current 7% SalesLoft adoption</div>
+            <div class="constraint-item"><strong>Optimization Limitations:</strong> Without sophisticated testing and optimization capabilities, improving sequence performance requires manual guesswork rather than data-driven iteration</div>
+        </div>
         
-        .constraint-item {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+        <div class="constraint-category">
+            <h5>Missing Critical Capabilities</h5>
+            <div class="constraint-item"><strong>No Success Plans/MAPs:</strong> Complete absence of native pilot management tools means continuing with Google Docs for 50% of deals requiring pilots</div>
+            <div class="constraint-item"><strong>No External Intelligence:</strong> Cannot monitor .edu/.gov sites for district changes, superintendent transitions, or grant opportunities - all require manual research</div>
+            <div class="constraint-item"><strong>Limited Automation:</strong> All AI features require human review and action - cannot achieve autonomous "agentic measures" Rich mandated</div>
+            <div class="constraint-item"><strong>No Advanced Account Planning:</strong> Missing specialized account planning tools beyond basic Salesforce functionality</div>
+        </div>
         
-        .constraint-item strong {
-            color: #495057;
-            font-weight: 600;
-        }
+        <div class="constraint-category">
+            <h5>Architectural Constraints</h5>
+            <div class="constraint-item"><strong>Modular Design Limitations:</strong> Built as conversation intelligence first with engagement added separately - creates inherent fragmentation between capabilities</div>
+            <div class="constraint-item"><strong>AI in Advisory Mode Only:</strong> Architecture keeps AI suggestions separate from execution, preventing true workflow automation</div>
+            <div class="constraint-item"><strong>Integration Boundaries:</strong> While native ChurnZero integration is strong, limited flexibility for complex custom object scenarios and external system integration</div>
+        </div>
         
-        .warning-box {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
+        <div class="constraint-category">
+            <h5>Scale and Reliability Considerations</h5>
+            <div class="constraint-item"><strong>Newer Platform Risk:</strong> Engage is relatively new to market with limited enterprise validation at Amira's scale</div>
+            <div class="constraint-item"><strong>Feature Gaps:</strong> Many advanced engagement features still in development or missing entirely</div>
+            <div class="constraint-item"><strong>Support Maturity:</strong> Less established playbooks and best practices for complex multi-motion organizations</div>
+        </div>
         
-        .warning-box h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        
-        .warning-box p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-        
-        .strategic-summary {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #6c757d;
-            margin-top: 25px;
-        }
-        
-        .strategic-summary strong {
-            color: #2c3e50;
-        }
-    </style>
-</head>
-<body>
-    <div class="warning-box">
-        <h4>Platform Considerations for Informed Decision Making</h4>
-        <p>While Gong offers strong conversation intelligence capabilities and has recently added engagement features, organizations should carefully evaluate these limitations when considering the platform for complex K-12 education sales operations.</p>
+        <div class="strategic-summary">
+            <strong>Strategic Implications:</strong> These constraints don't disqualify Gong but significantly impact its ability to address Amira's specific requirements. The platform excels at conversation intelligence and offers good basic engagement, but lacks the architectural foundation for autonomous AI workflows, comprehensive pilot management, and external intelligence gathering that Amira needs. For organizations seeking primarily conversation intelligence with basic engagement, Gong provides a solid solution. However, for Amira's complex requirements including autonomous AI agents, Success Plans for pilots, and external district monitoring, these limitations create significant gaps that would require additional tools or manual workarounds.
+        </div>
     </div>
-    
-    <div class="constraint-category">
-        <h5>Engagement Platform Maturity</h5>
-        <div class="constraint-item"><strong>Limited Sequence Sophistication:</strong> Gong Engage (released ~2023) lacks advanced features Outreach has refined over years - no A/B testing of sequence emails, limited send-time optimization, basic conditional logic compared to Outreach's trigger system</div>
-        <div class="constraint-item"><strong>Analytics Gaps:</strong> Sequence performance analytics are basic, making it difficult to understand why certain sequences succeed while others fail - critical given current 7% SalesLoft adoption</div>
-        <div class="constraint-item"><strong>Optimization Limitations:</strong> Without sophisticated testing and optimization capabilities, improving sequence performance requires manual guesswork rather than data-driven iteration</div>
-    </div>
-    
-    <div class="constraint-category">
-        <h5>Missing Critical Capabilities</h5>
-        <div class="constraint-item"><strong>No Success Plans/MAPs:</strong> Complete absence of native pilot management tools means continuing with Google Docs for 50% of deals requiring pilots</div>
-        <div class="constraint-item"><strong>No External Intelligence:</strong> Cannot monitor .edu/.gov sites for district changes, superintendent transitions, or grant opportunities - all require manual research</div>
-        <div class="constraint-item"><strong>Limited Automation:</strong> All AI features require human review and action - cannot achieve autonomous "agentic measures" Rich mandated</div>
-        <div class="constraint-item"><strong>No Advanced Account Planning:</strong> Missing specialized account planning tools beyond basic Salesforce functionality</div>
-    </div>
-    
-    <div class="constraint-category">
-        <h5>Architectural Constraints</h5>
-        <div class="constraint-item"><strong>Modular Design Limitations:</strong> Built as conversation intelligence first with engagement added separately - creates inherent fragmentation between capabilities</div>
-        <div class="constraint-item"><strong>AI in Advisory Mode Only:</strong> Architecture keeps AI suggestions separate from execution, preventing true workflow automation</div>
-        <div class="constraint-item"><strong>Integration Boundaries:</strong> While native ChurnZero integration is strong, limited flexibility for complex custom object scenarios and external system integration</div>
-    </div>
-    
-    <div class="constraint-category">
-        <h5>Scale and Reliability Considerations</h5>
-        <div class="constraint-item"><strong>Newer Platform Risk:</strong> Engage is relatively new to market with limited enterprise validation at Amira's scale</div>
-        <div class="constraint-item"><strong>Feature Gaps:</strong> Many advanced engagement features still in development or missing entirely</div>
-        <div class="constraint-item"><strong>Support Maturity:</strong> Less established playbooks and best practices for complex multi-motion organizations</div>
-    </div>
-    
-    <div class="strategic-summary">
-        <strong>Strategic Implications:</strong> These constraints don't disqualify Gong but significantly impact its ability to address Amira's specific requirements. The platform excels at conversation intelligence and offers good basic engagement, but lacks the architectural foundation for autonomous AI workflows, comprehensive pilot management, and external intelligence gathering that Amira needs. For organizations seeking primarily conversation intelligence with basic engagement, Gong provides a solid solution. However, for Amira's complex requirements including autonomous AI agents, Success Plans for pilots, and external district monitoring, these limitations create significant gaps that would require additional tools or manual workarounds.
-    </div>
-</body>
-</html>
+</section>
     
     <!-- Platform Assessment -->
     <section id="assessment" class="section">
